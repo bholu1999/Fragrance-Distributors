@@ -1,4 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -6,8 +8,8 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === '/';
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <Link to="/" className="text-xl font-sans font-bold tracking-tight uppercase flex items-center gap-1.5 transition-colors duration-300 text-white">
+        <Link href="/" className="text-xl font-sans font-bold tracking-tight uppercase flex items-center gap-1.5 transition-colors duration-300 text-white">
           <span className="text-primary">Fragrance</span> Distributors
         </Link>
 
@@ -42,7 +44,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.name}
-              to={link.path}
+              href={link.path}
               className="text-[11px] uppercase tracking-widest font-bold transition-colors duration-300 text-slate-300 hover:text-white"
             >
               {link.name}
@@ -50,13 +52,13 @@ export default function Navbar() {
           ))}
           <div className="flex items-center gap-4">
              <Link
-               to="/login"
+               href="/login"
                className="text-[11px] uppercase tracking-widest font-bold transition-colors duration-300 text-white hover:text-primary"
              >
                Login
              </Link>
              <Link
-               to="/register"
+               href="/register"
                className="px-6 py-2 rounded-sm bg-primary text-white text-[11px] uppercase tracking-widest font-bold hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all"
              >
                Join Us
@@ -82,7 +84,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                to={link.path}
+                href={link.path}
                 onClick={() => setIsOpen(false)}
                 className="text-xs uppercase tracking-widest font-bold text-slate-300 hover:text-white transition-colors border-b border-white/5 pb-4"
               >
@@ -91,14 +93,14 @@ export default function Navbar() {
             ))}
             <div className="flex flex-col gap-4 pt-4">
                <Link
-                 to="/login"
+                 href="/login"
                  onClick={() => setIsOpen(false)}
                  className="text-xs uppercase tracking-widest font-bold text-slate-300 hover:text-white transition-colors"
                >
                  Login
                </Link>
                <Link
-                 to="/register"
+                 href="/register"
                  onClick={() => setIsOpen(false)}
                  className="px-6 py-4 rounded-sm bg-primary text-white text-center text-xs uppercase tracking-widest font-bold hover:bg-primary-hover transition-all"
                >
@@ -111,3 +113,5 @@ export default function Navbar() {
     </header>
   );
 }
+
+

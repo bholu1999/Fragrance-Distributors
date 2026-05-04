@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 
 interface ProductCardProps {
@@ -15,7 +16,7 @@ export default function ProductCard({ id, name, brand, image, category }: Produc
       whileHover={{ y: -5 }}
       className="group block cursor-pointer"
     >
-      <Link to={`/catalog/${id}`}>
+      <Link href={`/catalog/${id}`}>
         <div className="relative aspect-[4/5] overflow-hidden bg-white border border-slate-200 mb-4 p-8">
           <img 
             src={image} 
@@ -34,3 +35,5 @@ export default function ProductCard({ id, name, brand, image, category }: Produc
     </motion.div>
   );
 }
+
+

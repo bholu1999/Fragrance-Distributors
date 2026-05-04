@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 
 interface CategoryCardProps {
@@ -9,7 +10,7 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ name, image, link }: CategoryCardProps) {
   return (
-    <Link to={link} className="block relative group overflow-hidden aspect-square md:aspect-[3/4]">
+    <Link href={link} className="block relative group overflow-hidden aspect-square md:aspect-[3/4]">
       <motion.div 
         className="w-full h-full"
         whileHover={{ scale: 1.03 }}
@@ -31,3 +32,5 @@ export default function CategoryCard({ name, image, link }: CategoryCardProps) {
     </Link>
   );
 }
+
+
