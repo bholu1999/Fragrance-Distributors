@@ -1,9 +1,15 @@
 'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+
+// Import JSON catalog files directly for downloading
+import clarinsData from '../../data/Clarins (Skincare GiftSets).json';
+import isseyData from '../../data/Issey Miyake Narciso Rodriguez Zadig Voltaire.json';
+import mixedData from '../../data/Mixed Selection.json';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +34,50 @@ export default function Navbar() {
 
   const isTransparent = isHome && !scrolled;
 
+  // Trigger sequential CSV downloads for all 3 datasets
+  const downloadAllCatalogs = () => {
+    const datasets = [
+      { name: 'Clarins_Skincare_GiftSets.csv', data: clarinsData },
+      { name: 'Issey_Miyake_Narciso_Rodriguez_Zadig_Voltaire.csv', data: isseyData },
+      { name: 'Mixed_Selection.csv', data: mixedData }
+    ];
+
+    datasets.forEach((dataset, idx) => {
+      // Delay downloads slightly to avoid browser pop-up blocking
+      setTimeout(() => {
+        const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
+        const csvRows = [
+          headers.join(','),
+          ...dataset.data.map((row: any) =>
+            [
+              row.EAN,
+              `"${row.BRAND.replace(/"/g, '""')}"`,
+              `"${row.STATUS.replace(/"/g, '""')}"`,
+              `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
+              row['READY QTYS'],
+              row['PRICE EUR'],
+              row['PRICE USD'],
+              typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
+            ].join(',')
+          )
+        ];
+
+        const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement('a');
+        link.setAttribute('href', encodedUri);
+        link.setAttribute('download', dataset.name);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, idx * 350); // 350ms delay
+    });
+  };
+
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isTransparent ? 'bg-transparent py-6' : 'bg-dark/95 backdrop-blur-md shadow-lg py-4 border-b border-white/10'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${isTransparent ? 'bg-transparent py-6' : 'bg-dark/95 backdrop-blur-md shadow-lg py-4 border-b border-white/10'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <Link href="/" className="text-xl font-sans font-bold tracking-tight uppercase flex items-center gap-1.5 transition-colors duration-300 text-white">
@@ -50,20 +95,14 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <div className="flex items-center gap-4">
-             <Link
-               href="/login"
-               className="text-[11px] uppercase tracking-widest font-bold transition-colors duration-300 text-white hover:text-primary"
-             >
-               Login
-             </Link>
-             <Link
-               href="/register"
-               className="px-6 py-2 rounded-sm bg-primary text-white text-[11px] uppercase tracking-widest font-bold hover:bg-primary-hover shadow-lg shadow-primary/20 transition-all"
-             >
-               Join Us
-             </Link>
-          </div>
+          <button
+            id="btn-download-all-desktop"
+            onClick={downloadAllCatalogs}
+            className="px-6 py-2.5 rounded-sm bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] uppercase tracking-widest font-bold shadow-lg shadow-emerald-600/20 transition-all flex items-center gap-2"
+          >
+            <Download size={13} />
+            Catalog Download
+          </button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -91,21 +130,18 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="flex flex-col gap-4 pt-4">
-               <Link
-                 href="/login"
-                 onClick={() => setIsOpen(false)}
-                 className="text-xs uppercase tracking-widest font-bold text-slate-300 hover:text-white transition-colors"
-               >
-                 Login
-               </Link>
-               <Link
-                 href="/register"
-                 onClick={() => setIsOpen(false)}
-                 className="px-6 py-4 rounded-sm bg-primary text-white text-center text-xs uppercase tracking-widest font-bold hover:bg-primary-hover transition-all"
-               >
-                 Register
-               </Link>
+            <div className="pt-4">
+              <button
+                id="btn-download-all-mobile"
+                onClick={() => {
+                  downloadAllCatalogs();
+                  setIsOpen(false);
+                }}
+                className="w-full px-6 py-4 rounded-sm bg-emerald-600 text-white text-center text-xs uppercase tracking-widest font-bold hover:bg-emerald-500 transition-all flex items-center justify-center gap-2"
+              >
+                <Download size={15} />
+                Catalog Download
+              </button>
             </div>
           </motion.nav>
         )}
@@ -113,5 +149,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-

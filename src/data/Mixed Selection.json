@@ -1,0 +1,562 @@
+[
+  {
+    "EAN": 3386460036757,
+    "BRAND": "Boucheron",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Femme Bague Edt 100Ml",
+    "READY QTYS": 22,
+    "PRICE EUR": 25.64,
+    "PRICE USD": 30.2,
+    "PRICE GBP": "£22.31"
+  },
+  {
+    "EAN": 3386460036405,
+    "BRAND": "Boucheron",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Homme Edt 100Ml",
+    "READY QTYS": 51,
+    "PRICE EUR": 21.4,
+    "PRICE USD": 25.21,
+    "PRICE GBP": "£18.62"
+  },
+  {
+    "EAN": 3386460151979,
+    "BRAND": "Coach",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Dreams Moonlight Edp 60Ml",
+    "READY QTYS": 158,
+    "PRICE EUR": 23.35,
+    "PRICE USD": 27.5,
+    "PRICE GBP": "£20.32"
+  },
+  {
+    "EAN": 3386460151962,
+    "BRAND": "Coach",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Dreams Moonlight Edp 90Ml",
+    "READY QTYS": 189,
+    "PRICE EUR": 29.87,
+    "PRICE USD": 35.18,
+    "PRICE GBP": "£25.99"
+  },
+  {
+    "EAN": 3386460095341,
+    "BRAND": "Coach",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Floral Edp 90Ml",
+    "READY QTYS": 5,
+    "PRICE EUR": 29.81,
+    "PRICE USD": 35.12,
+    "PRICE GBP": "£25.94"
+  },
+  {
+    "EAN": 3386460142182,
+    "BRAND": "Coach",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Love Edp 50Ml",
+    "READY QTYS": 472,
+    "PRICE EUR": 22.57,
+    "PRICE USD": 26.59,
+    "PRICE GBP": "£19.64"
+  },
+  {
+    "EAN": 3386460141253,
+    "BRAND": "Coach",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Green Edt 100Ml",
+    "READY QTYS": 6,
+    "PRICE EUR": 24.52,
+    "PRICE USD": 28.88,
+    "PRICE GBP": "£21.33"
+  },
+  {
+    "EAN": 3386460126625,
+    "BRAND": "Coach",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Open Road Edt 100Ml",
+    "READY QTYS": 124,
+    "PRICE EUR": 23.14,
+    "PRICE USD": 27.26,
+    "PRICE GBP": "£20.13"
+  },
+  {
+    "EAN": 7640233341414,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Elixir Edp 100Ml",
+    "READY QTYS": 7,
+    "PRICE EUR": 43.54,
+    "PRICE USD": 51.29,
+    "PRICE GBP": "£37.88"
+  },
+  {
+    "EAN": 7640233341391,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Elixir Edp 30Ml",
+    "READY QTYS": 9,
+    "PRICE EUR": 23.31,
+    "PRICE USD": 27.46,
+    "PRICE GBP": "£20.28"
+  },
+  {
+    "EAN": 7640233341407,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Elixir Edp 50Ml",
+    "READY QTYS": 4,
+    "PRICE EUR": 34.52,
+    "PRICE USD": 40.66,
+    "PRICE GBP": "£30.03"
+  },
+  {
+    "EAN": 7640233342039,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Elixir Love Edp 30Ml",
+    "READY QTYS": 2,
+    "PRICE EUR": 25.92,
+    "PRICE USD": 30.53,
+    "PRICE GBP": "£22.55"
+  },
+  {
+    "EAN": 7640233342046,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Elixir Love Edp 50Ml",
+    "READY QTYS": 38,
+    "PRICE EUR": 36.84,
+    "PRICE USD": 43.4,
+    "PRICE GBP": "£32.05"
+  },
+  {
+    "EAN": 7640233340172,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Girl Of Now Edp 30Ml",
+    "READY QTYS": 79,
+    "PRICE EUR": 22.76,
+    "PRICE USD": 26.81,
+    "PRICE GBP": "£19.8"
+  },
+  {
+    "EAN": 7640233340004,
+    "BRAND": "Elie Saab",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Le Parfum Edp 30Ml",
+    "READY QTYS": 96,
+    "PRICE EUR": 23.76,
+    "PRICE USD": 27.99,
+    "PRICE GBP": "£20.67"
+  },
+  {
+    "EAN": 3386460136549,
+    "BRAND": "Jimmy Choo",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Rose Passion Edp 100Ml",
+    "READY QTYS": 36,
+    "PRICE EUR": 31.34,
+    "PRICE USD": 36.92,
+    "PRICE GBP": "£27.27"
+  },
+  {
+    "EAN": 3386460115599,
+    "BRAND": "Karl Lagerfeld",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ny Mercer Street Edt 60Ml",
+    "READY QTYS": 24,
+    "PRICE EUR": 11.43,
+    "PRICE USD": 13.46,
+    "PRICE GBP": "£9.94"
+  },
+  {
+    "EAN": 3386460130066,
+    "BRAND": "Karl Lagerfeld",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Vienna Opera Edt 100Ml",
+    "READY QTYS": 79,
+    "PRICE EUR": 15.81,
+    "PRICE USD": 18.62,
+    "PRICE GBP": "£13.76"
+  },
+  {
+    "EAN": 3386460130073,
+    "BRAND": "Karl Lagerfeld",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Vienna Opera Edt 60Ml",
+    "READY QTYS": 2,
+    "PRICE EUR": 11.43,
+    "PRICE USD": 13.46,
+    "PRICE GBP": "£9.94"
+  },
+  {
+    "EAN": 3386460127950,
+    "BRAND": "Mont Blanc",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Legend Red Edp 100Ml",
+    "READY QTYS": 3,
+    "PRICE EUR": 33.4,
+    "PRICE USD": 39.34,
+    "PRICE GBP": "£29.06"
+  },
+  {
+    "EAN": 3386460134354,
+    "BRAND": "Rochas",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Byzance Gold Edp 60Ml",
+    "READY QTYS": 3,
+    "PRICE EUR": 20.82,
+    "PRICE USD": 24.52,
+    "PRICE GBP": "£18.11"
+  },
+  {
+    "EAN": 3386460137485,
+    "BRAND": "Rochas",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Edr Citron Edt 100Ml",
+    "READY QTYS": 4,
+    "PRICE EUR": 24.38,
+    "PRICE USD": 28.72,
+    "PRICE GBP": "£21.21"
+  },
+  {
+    "EAN": 3386460146395,
+    "BRAND": "Rochas",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Edr Orange Horizon Edt 100Ml",
+    "READY QTYS": 29,
+    "PRICE EUR": 24.13,
+    "PRICE USD": 28.43,
+    "PRICE GBP": "£21"
+  },
+  {
+    "EAN": 4973167228357,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Luminous Sheer Foundation Ls102 30Ml",
+    "READY QTYS": 5,
+    "PRICE EUR": 17.96,
+    "PRICE USD": 21.16,
+    "PRICE GBP": "£15.63"
+  },
+  {
+    "EAN": 4973167228371,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Luminous Sheer Foundation Ls103 30Ml",
+    "READY QTYS": 9,
+    "PRICE EUR": 18.43,
+    "PRICE USD": 21.71,
+    "PRICE GBP": "£16.03"
+  },
+  {
+    "EAN": 4973167228425,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Luminous Sheer Foundation Ls203 30Ml",
+    "READY QTYS": 4,
+    "PRICE EUR": 17.14,
+    "PRICE USD": 20.19,
+    "PRICE GBP": "£14.91"
+  },
+  {
+    "EAN": 4973167228432,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Luminous Sheer Foundation Ls204 Hb 30Ml",
+    "READY QTYS": 1,
+    "PRICE EUR": 18.04,
+    "PRICE USD": 21.25,
+    "PRICE GBP": "£15.7"
+  },
+  {
+    "EAN": 4973167228456,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Luminous Sheer Foundation Ls204.5 30Ml",
+    "READY QTYS": 5,
+    "PRICE EUR": 18.48,
+    "PRICE USD": 21.77,
+    "PRICE GBP": "£16.08"
+  },
+  {
+    "EAN": 4973167852743,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Contouring Lipstick Refill Cl02 2G",
+    "READY QTYS": 5,
+    "PRICE EUR": 8.81,
+    "PRICE USD": 10.38,
+    "PRICE GBP": "£7.67"
+  },
+  {
+    "EAN": 4973167852750,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Contouring Lipstick Refill Cl03 2G",
+    "READY QTYS": 8,
+    "PRICE EUR": 9.45,
+    "PRICE USD": 11.13,
+    "PRICE GBP": "£8.22"
+  },
+  {
+    "EAN": 4973167852774,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Contouring Lipstick Refill Cl05 2G",
+    "READY QTYS": 10,
+    "PRICE EUR": 9.38,
+    "PRICE USD": 11.05,
+    "PRICE GBP": "£8.16"
+  },
+  {
+    "EAN": 4973167852811,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Contouring Lipstick Refill Cl09 2G",
+    "READY QTYS": 15,
+    "PRICE EUR": 10.02,
+    "PRICE USD": 11.8,
+    "PRICE GBP": "£8.72"
+  },
+  {
+    "EAN": 4973167852828,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Contouring Lipstick Refill Cl10 2G",
+    "READY QTYS": 10,
+    "PRICE EUR": 9.01,
+    "PRICE USD": 10.61,
+    "PRICE GBP": "£7.84"
+  },
+  {
+    "EAN": 4973167852835,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Contouring Lipstick Refill Cl11 2G",
+    "READY QTYS": 4,
+    "PRICE EUR": 9.52,
+    "PRICE USD": 11.21,
+    "PRICE GBP": "£8.28"
+  },
+  {
+    "EAN": 4973167635858,
+    "BRAND": "Sensai",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sul The Micro Lotion 125Ml",
+    "READY QTYS": 3,
+    "PRICE EUR": 67.97,
+    "PRICE USD": 80.07,
+    "PRICE GBP": "£59.14"
+  },
+  {
+    "EAN": 729238147362,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Microliner Ink 04",
+    "READY QTYS": 11,
+    "PRICE EUR": 9.55,
+    "PRICE USD": 11.25,
+    "PRICE GBP": "£8.31"
+  },
+  {
+    "EAN": 729238147379,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Microliner Ink 05",
+    "READY QTYS": 1,
+    "PRICE EUR": 9.55,
+    "PRICE USD": 11.25,
+    "PRICE GBP": "£8.31"
+  },
+  {
+    "EAN": 729238217416,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Radiant Lifting 360 Fdt 30Ml",
+    "READY QTYS": 6,
+    "PRICE EUR": 18.82,
+    "PRICE USD": 22.17,
+    "PRICE GBP": "£16.37"
+  },
+  {
+    "EAN": 729238217584,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Self-Refresh New 150 Fdt 30Ml",
+    "READY QTYS": 12,
+    "PRICE EUR": 20.79,
+    "PRICE USD": 24.49,
+    "PRICE GBP": "£18.09"
+  },
+  {
+    "EAN": 729238217775,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Self-Refreshing 340 Fdt 30Ml",
+    "READY QTYS": 4,
+    "PRICE EUR": 17.99,
+    "PRICE USD": 21.19,
+    "PRICE GBP": "£15.65"
+  },
+  {
+    "EAN": 730852164109,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Shimmer Gelgloss 08",
+    "READY QTYS": 16,
+    "PRICE EUR": 8.71,
+    "PRICE USD": 10.26,
+    "PRICE GBP": "£7.58"
+  },
+  {
+    "EAN": 730852164314,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Mod Mat Lipstick 529",
+    "READY QTYS": 74,
+    "PRICE EUR": 10.4,
+    "PRICE USD": 12.25,
+    "PRICE GBP": "£9.05"
+  },
+  {
+    "EAN": 768614143925,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Skin Empowering Cream",
+    "READY QTYS": 12,
+    "PRICE EUR": 40.46,
+    "PRICE USD": 47.66,
+    "PRICE GBP": "£35.2"
+  },
+  {
+    "EAN": 768614184867,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ginza Edp Murasaki 30Ml",
+    "READY QTYS": 23,
+    "PRICE EUR": 20.79,
+    "PRICE USD": 24.49,
+    "PRICE GBP": "£18.09"
+  },
+  {
+    "EAN": 768614212492,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ginza Night Intense Edp 30Ml",
+    "READY QTYS": 278,
+    "PRICE EUR": 21.91,
+    "PRICE USD": 25.81,
+    "PRICE GBP": "£19.06"
+  },
+  {
+    "EAN": 768614212522,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ginza Night Intense Edp 50Ml",
+    "READY QTYS": 90,
+    "PRICE EUR": 31.75,
+    "PRICE USD": 37.4,
+    "PRICE GBP": "£27.62"
+  },
+  {
+    "EAN": 768614212539,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ginza Night Intense Edp 90Ml",
+    "READY QTYS": 15,
+    "PRICE EUR": 45.23,
+    "PRICE USD": 53.28,
+    "PRICE GBP": "£39.35"
+  },
+  {
+    "EAN": 768614220473,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ginza Datura Edp 30Ml",
+    "READY QTYS": 246,
+    "PRICE EUR": 20.79,
+    "PRICE USD": 24.49,
+    "PRICE GBP": "£18.09"
+  },
+  {
+    "EAN": 729238147928,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Mod Mat Lipstick 516",
+    "READY QTYS": 8,
+    "PRICE EUR": 13.2,
+    "PRICE USD": 15.55,
+    "PRICE GBP": "£11.48"
+  },
+  {
+    "EAN": 729238147973,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Mod Mat Lipstick 521",
+    "READY QTYS": 3,
+    "PRICE EUR": 14.61,
+    "PRICE USD": 17.21,
+    "PRICE GBP": "£12.71"
+  },
+  {
+    "EAN": 729238148918,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Colorgel Lipbalm 102",
+    "READY QTYS": 1,
+    "PRICE EUR": 11.8,
+    "PRICE USD": 13.9,
+    "PRICE GBP": "£10.27"
+  },
+  {
+    "EAN": 729238177239,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Microliner Ink 06",
+    "READY QTYS": 8,
+    "PRICE EUR": 7.3,
+    "PRICE USD": 8.6,
+    "PRICE GBP": "£6.35"
+  },
+  {
+    "EAN": 729238177246,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Microliner Ink 07",
+    "READY QTYS": 10,
+    "PRICE EUR": 9.27,
+    "PRICE USD": 10.92,
+    "PRICE GBP": "£8.07"
+  },
+  {
+    "EAN": 729238217638,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Radiant Lifting 410 Fdt 30Ml",
+    "READY QTYS": 25,
+    "PRICE EUR": 18.82,
+    "PRICE USD": 22.17,
+    "PRICE GBP": "£16.37"
+  },
+  {
+    "EAN": 729238217874,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Self-Refreshing 410 Fdt 30Ml",
+    "READY QTYS": 25,
+    "PRICE EUR": 17.99,
+    "PRICE USD": 21.19,
+    "PRICE GBP": "£15.65"
+  },
+  {
+    "EAN": 768614182092,
+    "BRAND": "Shiseido",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Gsc Urban Of Emuls Spf30 30Ml",
+    "READY QTYS": 52,
+    "PRICE EUR": 13.49,
+    "PRICE USD": 15.89,
+    "PRICE GBP": "£11.74"
+  }
+]

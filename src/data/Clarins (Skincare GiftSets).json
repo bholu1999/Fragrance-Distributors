@@ -1,0 +1,512 @@
+[
+  {
+    "EAN": 3380810424072,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Uv+ Rose Day Suncreen Spf50 30Ml",
+    "READY QTYS": 39,
+    "PRICE EUR": 11.62,
+    "PRICE USD": 13.69,
+    "PRICE GBP": "£10.11"
+  },
+  {
+    "EAN": 3380810449020,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Self Tan Milky Lotion 125Ml",
+    "READY QTYS": 18,
+    "PRICE EUR": 8.22,
+    "PRICE USD": 9.68,
+    "PRICE GBP": "£7.15"
+  },
+  {
+    "EAN": 3666057115288,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sc After Sun Balm 150Ml ",
+    "READY QTYS": 271,
+    "PRICE EUR": 7.57,
+    "PRICE USD": 8.92,
+    "PRICE GBP": "£6.59"
+  },
+  {
+    "EAN": 3666057128783,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sos Mask Purity 75Ml",
+    "READY QTYS": 12,
+    "PRICE EUR": 10.36,
+    "PRICE USD": 12.2,
+    "PRICE GBP": "£9.01"
+  },
+  {
+    "EAN": 3666057298011,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Si Tm 02.5 40Ml Spf25",
+    "READY QTYS": 49,
+    "PRICE EUR": 11.62,
+    "PRICE USD": 13.69,
+    "PRICE GBP": "£10.11"
+  },
+  {
+    "EAN": 3666057298875,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Jr 705V Full Reno",
+    "READY QTYS": 48,
+    "PRICE EUR": 8.99,
+    "PRICE USD": 10.59,
+    "PRICE GBP": "£7.82"
+  },
+  {
+    "EAN": 3666057335686,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Mask Sos Comfort 75Ml",
+    "READY QTYS": 12,
+    "PRICE EUR": 11.34,
+    "PRICE USD": 13.36,
+    "PRICE GBP": "£9.87"
+  },
+  {
+    "EAN": 3666057350160,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Purify Gntl Foam 125Ml Rpk",
+    "READY QTYS": 313,
+    "PRICE EUR": 7.13,
+    "PRICE USD": 8.4,
+    "PRICE GBP": "£6.2"
+  },
+  {
+    "EAN": 3666057350733,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Men Smooth Shave Foaming Gel 150Ml",
+    "READY QTYS": 157,
+    "PRICE EUR": 8.27,
+    "PRICE USD": 9.74,
+    "PRICE GBP": "£7.2"
+  },
+  {
+    "EAN": 3666057412585,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Hydra Toning Lotion 200Ml",
+    "READY QTYS": 479,
+    "PRICE EUR": 7.16,
+    "PRICE USD": 8.43,
+    "PRICE GBP": "£6.23"
+  },
+  {
+    "EAN": 3666057412622,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Hydra Toning Lotion 400Ml",
+    "READY QTYS": 80,
+    "PRICE EUR": 10.77,
+    "PRICE USD": 12.69,
+    "PRICE GBP": "£9.37"
+  },
+  {
+    "EAN": 3380810449051,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Samoopalacz Body Booster 30Ml",
+    "READY QTYS": 9,
+    "PRICE EUR": 10.97,
+    "PRICE USD": 12.92,
+    "PRICE GBP": "£9.54"
+  },
+  {
+    "EAN": 3666057020070,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Nutri Lumiere Revive 50Ml",
+    "READY QTYS": 179,
+    "PRICE EUR": 32.33,
+    "PRICE USD": 38.08,
+    "PRICE GBP": "£28.13"
+  },
+  {
+    "EAN": 3666057025907,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Aroma Eau Ressourcante 100Ml",
+    "READY QTYS": 1,
+    "PRICE EUR": 12.93,
+    "PRICE USD": 15.23,
+    "PRICE GBP": "£11.25"
+  },
+  {
+    "EAN": 3666057097959,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Hydra Ess Bi Ser 30Ml",
+    "READY QTYS": 47,
+    "PRICE EUR": 15.92,
+    "PRICE USD": 18.75,
+    "PRICE GBP": "£13.85"
+  },
+  {
+    "EAN": 3666057106897,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sc Aftersun F&B Mask 100Ml Rpk",
+    "READY QTYS": 144,
+    "PRICE EUR": 8.13,
+    "PRICE USD": 9.58,
+    "PRICE GBP": "£7.07"
+  },
+  {
+    "EAN": 3666057136290,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Face Scrub Fresh Rpk 50Ml",
+    "READY QTYS": 21,
+    "PRICE EUR": 8.24,
+    "PRICE USD": 9.71,
+    "PRICE GBP": "£7.17"
+  },
+  {
+    "EAN": 3666057165436,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Plt Quatuor 08",
+    "READY QTYS": 57,
+    "PRICE EUR": 12.68,
+    "PRICE USD": 14.94,
+    "PRICE GBP": "£11.03"
+  },
+  {
+    "EAN": 3666057165467,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Plt Quatuor 09",
+    "READY QTYS": 1,
+    "PRICE EUR": 13.79,
+    "PRICE USD": 16.24,
+    "PRICE GBP": "£12"
+  },
+  {
+    "EAN": 3666057165580,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Eyeshad Ombre Skin 04",
+    "READY QTYS": 27,
+    "PRICE EUR": 6.79,
+    "PRICE USD": 8,
+    "PRICE GBP": "£5.91"
+  },
+  {
+    "EAN": 3666057180590,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ever Matte Compact Powder 05 10Gr",
+    "READY QTYS": 45,
+    "PRICE EUR": 11.66,
+    "PRICE USD": 13.73,
+    "PRICE GBP": "£10.14"
+  },
+  {
+    "EAN": 3666057195198,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Instant Beauty Fresh Ampoule 8Ml",
+    "READY QTYS": 52,
+    "PRICE EUR": 11.11,
+    "PRICE USD": 13.09,
+    "PRICE GBP": "£9.67"
+  },
+  {
+    "EAN": 3666057200069,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Hydra Mask 75Ml",
+    "READY QTYS": 5,
+    "PRICE EUR": 10.99,
+    "PRICE USD": 12.95,
+    "PRICE GBP": "£9.56"
+  },
+  {
+    "EAN": 3666057217272,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Total Cleansing Oil Doypack 300Ml",
+    "READY QTYS": 30,
+    "PRICE EUR": 15.09,
+    "PRICE USD": 17.78,
+    "PRICE GBP": "£13.13"
+  },
+  {
+    "EAN": 3666057238482,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Quatuor 10 4.2G",
+    "READY QTYS": 31,
+    "PRICE EUR": 12.63,
+    "PRICE USD": 14.88,
+    "PRICE GBP": "£10.99"
+  },
+  {
+    "EAN": 3666057238536,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ombre Skin 08 1.5G",
+    "READY QTYS": 6,
+    "PRICE EUR": 6.64,
+    "PRICE USD": 7.82,
+    "PRICE GBP": "£5.78"
+  },
+  {
+    "EAN": 3666057241314,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Skin Illusion Fdt 100.4N 30Ml",
+    "READY QTYS": 149,
+    "PRICE EUR": 12.47,
+    "PRICE USD": 14.69,
+    "PRICE GBP": "£10.85"
+  },
+  {
+    "EAN": 3666057241376,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Skin Illusion Fdt 105.5W 30Ml",
+    "READY QTYS": 106,
+    "PRICE EUR": 12.47,
+    "PRICE USD": 14.69,
+    "PRICE GBP": "£10.85"
+  },
+  {
+    "EAN": 3666057241383,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sifc 106N 30Ml",
+    "READY QTYS": 130,
+    "PRICE EUR": 12.47,
+    "PRICE USD": 14.69,
+    "PRICE GBP": "£10.85"
+  },
+  {
+    "EAN": 3666057241390,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sifc 107C 30Ml",
+    "READY QTYS": 10,
+    "PRICE EUR": 12.47,
+    "PRICE USD": 14.69,
+    "PRICE GBP": "£10.85"
+  },
+  {
+    "EAN": 3666057241406,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Sifc 108W 30Ml",
+    "READY QTYS": 34,
+    "PRICE EUR": 12.47,
+    "PRICE USD": 14.69,
+    "PRICE GBP": "£10.85"
+  },
+  {
+    "EAN": 3666057241420,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Skin Illusion Fdt 108.5W 30Ml",
+    "READY QTYS": 129,
+    "PRICE EUR": 12.47,
+    "PRICE USD": 14.69,
+    "PRICE GBP": "£10.85"
+  },
+  {
+    "EAN": 3666057246326,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Eyebrow Pencil 03 Rpk",
+    "READY QTYS": 35,
+    "PRICE EUR": 4.92,
+    "PRICE USD": 5.8,
+    "PRICE GBP": "£4.28"
+  },
+  {
+    "EAN": 3666057289460,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Men Face Anti Ageing Cream 50Ml",
+    "READY QTYS": 50,
+    "PRICE EUR": 19.39,
+    "PRICE USD": 22.84,
+    "PRICE GBP": "£16.87"
+  },
+  {
+    "EAN": 3666057295829,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Renew Body Serum 200Ml",
+    "READY QTYS": 52,
+    "PRICE EUR": 15.95,
+    "PRICE USD": 18.79,
+    "PRICE GBP": "£13.88"
+  },
+  {
+    "EAN": 3666057295928,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Exfol Body Scrub 200Ml",
+    "READY QTYS": 52,
+    "PRICE EUR": 11.67,
+    "PRICE USD": 13.75,
+    "PRICE GBP": "£10.15"
+  },
+  {
+    "EAN": 3666057297991,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Si Tm 01 40Ml Spf25",
+    "READY QTYS": 60,
+    "PRICE EUR": 11.1,
+    "PRICE USD": 13.08,
+    "PRICE GBP": "£9.66"
+  },
+  {
+    "EAN": 3666057298042,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Si Tm 05 40Ml Spf25",
+    "READY QTYS": 114,
+    "PRICE EUR": 11.1,
+    "PRICE USD": 13.08,
+    "PRICE GBP": "£9.66"
+  },
+  {
+    "EAN": 3666057298820,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Jr 742V Full Reno",
+    "READY QTYS": 4,
+    "PRICE EUR": 8.55,
+    "PRICE USD": 10.07,
+    "PRICE GBP": "£7.44"
+  },
+  {
+    "EAN": 3666057298851,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Jr 732V Full Reno",
+    "READY QTYS": 4,
+    "PRICE EUR": 8.55,
+    "PRICE USD": 10.07,
+    "PRICE GBP": "£7.44"
+  },
+  {
+    "EAN": 3666057298905,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Jr 783V Full Reno",
+    "READY QTYS": 59,
+    "PRICE EUR": 8.55,
+    "PRICE USD": 10.07,
+    "PRICE GBP": "£7.44"
+  },
+  {
+    "EAN": 3666057333545,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Fresh Scrub 50Ml",
+    "READY QTYS": 32,
+    "PRICE EUR": 8.6,
+    "PRICE USD": 10.13,
+    "PRICE GBP": "£7.48"
+  },
+  {
+    "EAN": 3666057333552,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Comfort Scrub 50Ml",
+    "READY QTYS": 110,
+    "PRICE EUR": 8.47,
+    "PRICE USD": 9.98,
+    "PRICE GBP": "£7.37"
+  },
+  {
+    "EAN": 3666057343032,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Lip Comfort Oil 27 7Ml",
+    "READY QTYS": 124,
+    "PRICE EUR": 8.49,
+    "PRICE USD": 10,
+    "PRICE GBP": "£7.39"
+  },
+  {
+    "EAN": 3666057343049,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Lip Comfort Oil 28 7Ml",
+    "READY QTYS": 154,
+    "PRICE EUR": 8.49,
+    "PRICE USD": 10,
+    "PRICE GBP": "£7.39"
+  },
+  {
+    "EAN": 3386460150118,
+    "BRAND": "Lacoste",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Original Set Edp60+Sg100",
+    "READY QTYS": 57,
+    "PRICE EUR": 34.23,
+    "PRICE USD": 40.32,
+    "PRICE GBP": "£29.78"
+  },
+  {
+    "EAN": 3666057389559,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Collec Ef Crm D+N+Eye+Msc Set 6Pcs",
+    "READY QTYS": 64,
+    "PRICE EUR": 66.92,
+    "PRICE USD": 78.83,
+    "PRICE GBP": "£58.22"
+  },
+  {
+    "EAN": 3666057389597,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ds & Super Restorative D+N Set 4Pcs",
+    "READY QTYS": 165,
+    "PRICE EUR": 46.15,
+    "PRICE USD": 54.36,
+    "PRICE GBP": "£40.15"
+  },
+  {
+    "EAN": 3666057389603,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Nutri Lumiere Crm D+N+Eye Set 4Pcs",
+    "READY QTYS": 22,
+    "PRICE EUR": 42.63,
+    "PRICE USD": 50.22,
+    "PRICE GBP": "£37.09"
+  },
+  {
+    "EAN": 3666057389610,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Ds 50 Ml+Cr+Lco Set 3Pcs",
+    "READY QTYS": 7,
+    "PRICE EUR": 46.15,
+    "PRICE USD": 54.36,
+    "PRICE GBP": "£40.15"
+  },
+  {
+    "EAN": 3666057389825,
+    "BRAND": "Clarins",
+    "STATUS": "Regular",
+    "DESCRIPTION": "Lip Comfort Oil Set 4Pcs",
+    "READY QTYS": 261,
+    "PRICE EUR": 35.5,
+    "PRICE USD": 41.82,
+    "PRICE GBP": "£30.89"
+  }
+]

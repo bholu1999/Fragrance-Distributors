@@ -3,8 +3,8 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
 export const metadata = {
-  title: 'Daaju Platform',
-  description: 'Fragrance distributor',
+  title: 'Fragrance Distributor',
+  description: 'Global Fragrance Distribution Authority',
 };
 
 export default function RootLayout({
