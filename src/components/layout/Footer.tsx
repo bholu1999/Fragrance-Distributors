@@ -1,12 +1,23 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="bg-dark text-slate-300 py-16 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-1">
-          <Link href="/" className="text-xl font-sans font-bold tracking-tight uppercase flex items-center gap-1.5 mb-6 text-white">
-            <span className="text-primary">Fragrance</span> Distributors
+          <Link href="/" className="flex items-center gap-3 mb-6 group">
+            <Image 
+              src="/logo.png" 
+              alt="Fragrance Distributors EU Logo" 
+              width={48} 
+              height={48} 
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-sans font-bold tracking-tight uppercase text-primary">Fragrance</span>
+              <span className="text-[11px] font-sans font-bold tracking-widest uppercase text-white">Distributors EU</span>
+            </div>
           </Link>
           <p className="text-slate-400 text-sm leading-relaxed font-normal">
             The premier wholesale distribution partner. 

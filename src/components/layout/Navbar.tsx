@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Download } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -80,8 +81,18 @@ export default function Navbar() {
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <Link href="/" className="text-xl font-sans font-bold tracking-tight uppercase flex items-center gap-1.5 transition-colors duration-300 text-white">
-          <span className="text-primary">Fragrance</span> Distributors
+        <Link href="/" className="flex items-center gap-3 transition-colors duration-300 group">
+          <Image
+            src="/logo.png"
+            alt="Fragrance Distributors EU Logo"
+            width={60}
+            height={60}
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg font-sans font-bold tracking-tight uppercase text-primary">Fragrance</span>
+            <span className="text-[10px] font-sans font-bold tracking-widest uppercase text-white">Distributors EU</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

@@ -86,10 +86,10 @@ export default function Catalog() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortField, setSortField] = useState<keyof CatalogRecord | null>(null);
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
-  
+
   // Spreadsheet cell state
   const [selectedCell, setSelectedCell] = useState<{ row: number; colName: string; value: string } | null>(null);
-  
+
   // Pagination limit to avoid sluggish DOM renders for huge arrays
   const [visibleRowsCount, setVisibleRowsCount] = useState(50);
 
@@ -131,7 +131,7 @@ export default function Catalog() {
   // Sorting and Filtering logic
   const filteredAndSortedRecords = useMemo(() => {
     if (!activeSheet) return [];
-    
+
     // 1. Filter
     let records = activeSheet.raw.filter((row) => {
       const eanStr = String(row.EAN || '').toLowerCase();
@@ -149,16 +149,16 @@ export default function Catalog() {
 
         // Convert values to comparable formats
         if (typeof valA === 'string' && typeof valB === 'string') {
-          return sortDirection === 'asc' 
-            ? valA.localeCompare(valB) 
+          return sortDirection === 'asc'
+            ? valA.localeCompare(valB)
             : valB.localeCompare(valA);
         }
 
         if (typeof valA === 'string') valA = parseFloat(valA.replace(/[^0-9.]/g, '')) || 0;
         if (typeof valB === 'string') valB = parseFloat(valB.replace(/[^0-9.]/g, '')) || 0;
 
-        return sortDirection === 'asc' 
-          ? (valA as number) - (valB as number) 
+        return sortDirection === 'asc'
+          ? (valA as number) - (valB as number)
           : (valB as number) - (valA as number);
       });
     }
@@ -215,7 +215,7 @@ export default function Catalog() {
   return (
     <div className="bg-slate-50 pt-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        
+
         {/* Header Section */}
         <div className="text-center mb-16">
           <motion.div
@@ -251,7 +251,7 @@ export default function Catalog() {
               >
                 {/* Visual Accent Bar */}
                 <div className={`h-2 bg-gradient-to-r ${sheet.accentGradient} border-b ${sheet.borderColor}`} />
-                
+
                 <div className="p-8 flex-grow flex flex-col">
                   {/* File Info Header */}
                   <div className="flex items-start justify-between mb-6">
@@ -334,7 +334,7 @@ export default function Catalog() {
         </div>
 
         {/* Brand Information Footer banner */}
-        <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-white/10 shadow-xl">
+        {/* <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-white/10 shadow-xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.1),transparent_50%)]" />
           <div className="relative z-10 max-w-xl">
             <h4 className="text-lg md:text-xl font-bold mb-2 flex items-center gap-2">
@@ -351,7 +351,7 @@ export default function Catalog() {
           >
             Configure custom feed
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* Spreadsheet Modal Overlay */}
@@ -370,7 +370,7 @@ export default function Catalog() {
               transition={{ type: 'spring', damping: 25 }}
               className="bg-white w-full max-w-7xl h-[92vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200"
             >
-              
+
               {/* Modal Spreadsheet Header / Controls */}
               <div className="bg-slate-900 text-white px-6 py-4 flex flex-col md:flex-row md:items-center justify-between border-b border-slate-800 gap-4">
                 <div className="flex items-center gap-3">
@@ -438,11 +438,10 @@ export default function Catalog() {
                     id={`tab-sheet-${sheet.id}`}
                     key={sheet.id}
                     onClick={() => switchSheetInModal(sheet.id)}
-                    className={`px-4 py-2.5 text-xs font-sans font-bold flex items-center gap-2 border-b-2 transition-all shrink-0 ${
-                      activeSheetId === sheet.id
+                    className={`px-4 py-2.5 text-xs font-sans font-bold flex items-center gap-2 border-b-2 transition-all shrink-0 ${activeSheetId === sheet.id
                         ? 'border-emerald-600 bg-white text-emerald-600 font-extrabold'
                         : 'border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
-                    }`}
+                      }`}
                   >
                     <Layers size={12} />
                     {sheet.title.split(' ')[0]} Portfolio
@@ -496,42 +495,42 @@ export default function Catalog() {
               {/* Interactive Spreadsheet Grid View */}
               <div className="flex-grow overflow-auto relative">
                 <table className="w-full text-left border-collapse table-fixed min-w-[900px]">
-                  
+
                   {/* Excel Column Letters Header */}
                   <thead className="sticky top-0 bg-slate-100 z-10 text-[10px] font-mono text-slate-500 shadow-[0_1px_0_0_rgba(226,232,240,1)]">
                     <tr>
                       <th className="w-12 bg-slate-200 border-r border-b border-slate-300 text-center select-none font-bold py-1.5 font-mono"></th>
-                      
+
                       <th className="w-36 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
                         <button onClick={() => requestSort('EAN')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
                           Col A (EAN) <ArrowUpDown size={10} />
                         </button>
                       </th>
-                      
+
                       <th className="w-32 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
                         <button onClick={() => requestSort('BRAND')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
                           Col B (BRAND) <ArrowUpDown size={10} />
                         </button>
                       </th>
-                      
+
                       <th className="w-80 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
                         <button onClick={() => requestSort('DESCRIPTION')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
                           Col C (DESCRIPTION) <ArrowUpDown size={10} />
                         </button>
                       </th>
-                      
+
                       <th className="w-24 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
                         <button onClick={() => requestSort('READY QTYS')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
                           Col D (QTY) <ArrowUpDown size={10} />
                         </button>
                       </th>
-                      
+
                       <th className="w-28 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
                         <button onClick={() => requestSort('PRICE EUR')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
                           Col E (PRICE €) <ArrowUpDown size={10} />
                         </button>
                       </th>
-                      
+
                       <th className="w-28 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
                         <button onClick={() => requestSort('PRICE USD')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
                           Col F (PRICE $) <ArrowUpDown size={10} />
@@ -567,9 +566,8 @@ export default function Catalog() {
                           {/* EAN Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'A', row.EAN)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-mono select-text truncate ${
-                              isEanSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
-                            }`}
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-mono select-text truncate ${isEanSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                              }`}
                           >
                             {row.EAN}
                           </td>
@@ -577,9 +575,8 @@ export default function Catalog() {
                           {/* Brand Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'B', row.BRAND)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-semibold truncate ${
-                              isBrandSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
-                            }`}
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-semibold truncate ${isBrandSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                              }`}
                           >
                             {row.BRAND}
                           </td>
@@ -587,9 +584,8 @@ export default function Catalog() {
                           {/* Description Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'C', row.DESCRIPTION)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-slate-600 font-light truncate ${
-                              isDescSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
-                            }`}
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-slate-600 font-light truncate ${isDescSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                              }`}
                           >
                             {row.DESCRIPTION}
                           </td>
@@ -597,9 +593,8 @@ export default function Catalog() {
                           {/* Quantity Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'D', row['READY QTYS'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold ${
-                              row['READY QTYS'] < 10 ? 'text-amber-600' : 'text-slate-700'
-                            } ${isQtySelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''}`}
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold ${row['READY QTYS'] < 10 ? 'text-amber-600' : 'text-slate-700'
+                              } ${isQtySelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''}`}
                           >
                             {row['READY QTYS'].toLocaleString()}
                           </td>
@@ -607,9 +602,8 @@ export default function Catalog() {
                           {/* Price EUR Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'E', row['PRICE EUR'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-emerald-600 font-semibold ${
-                              isEurSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
-                            }`}
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-emerald-600 font-semibold ${isEurSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                              }`}
                           >
                             €{Number(row['PRICE EUR']).toFixed(2)}
                           </td>
@@ -617,9 +611,8 @@ export default function Catalog() {
                           {/* Price USD Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'F', row['PRICE USD'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${
-                              isUsdSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
-                            }`}
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isUsdSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                              }`}
                           >
                             ${Number(row['PRICE USD']).toFixed(2)}
                           </td>
@@ -627,9 +620,8 @@ export default function Catalog() {
                           {/* Price GBP Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'G', row['PRICE GBP'])}
-                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${
-                              isGbpSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
-                            }`}
+                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isGbpSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                              }`}
                           >
                             {typeof row['PRICE GBP'] === 'number' ? `£${row['PRICE GBP'].toFixed(2)}` : row['PRICE GBP']}
                           </td>

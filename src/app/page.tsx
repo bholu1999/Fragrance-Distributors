@@ -26,7 +26,7 @@ const processSteps = [
   },
   {
     title: 'Customer Acquisition',
-    description: 'Collect and manage orders from customers.',
+    description: 'Collect and manage orders from Businesses.',
     icon: ShoppingCart,
     iconBg: 'bg-emerald-50',
     iconText: 'text-emerald-600'
@@ -115,7 +115,7 @@ export default function Home() {
             className="text-6xl md:text-8xl font-sans font-bold tracking-tighter text-white mb-8 leading-[0.9] lg:leading-[0.85]"
           >
             Global Fragrance <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600">Distribution Authority</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600">Distribution</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -136,7 +136,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </Link>
             <Link href="/contact" className="px-10 py-5 rounded-sm bg-transparent text-white text-[11px] uppercase tracking-[0.2em] font-bold border border-slate-600 hover:bg-white hover:text-dark transition-all backdrop-blur-sm">
-              Apply for Access
+              Ordering Information
             </Link>
           </motion.div>
 
@@ -187,9 +187,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-dark mb-4">XLSX Catalog Generation</h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-6">Instantly export localized, media-rich product lists with real-time stock levels for your storefront or marketing ops.</p>
-              <Link href="/download" className="text-[10px] uppercase tracking-[0.2em] font-black text-dark flex items-center gap-2 group-hover:text-primary transition-colors">
+              {/* <Link href="/download" className="text-[10px] uppercase tracking-[0.2em] font-black text-dark flex items-center gap-2 group-hover:text-primary transition-colors">
                 Learn More <ArrowRight size={12} />
-              </Link>
+              </Link> */}
             </motion.div>
 
             {/* Feature 2 */}
@@ -199,9 +199,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-dark mb-4">Inventory Synchronization</h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-6">Connect your backend directly to our warehouse stack. Prevent stockouts with high-frequency availability polling.</p>
-              <Link href="/about" className="text-[10px] uppercase tracking-[0.2em] font-black text-dark flex items-center gap-2 group-hover:text-primary transition-colors">
+              {/* <Link href="/about" className="text-[10px] uppercase tracking-[0.2em] font-black text-dark flex items-center gap-2 group-hover:text-primary transition-colors">
                 System Architecture <ArrowRight size={12} />
-              </Link>
+              </Link> */}
             </motion.div>
 
             {/* Feature 3 */}
@@ -211,9 +211,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-dark mb-4">Selective Distribution</h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-6">Access exclusive luxury brands through a strictly vetted B2B ecosystem designed for high-end retailers.</p>
-              <Link href="/register" className="text-[10px] uppercase tracking-[0.2em] font-black text-dark flex items-center gap-2 group-hover:text-primary transition-colors">
+              {/* <Link href="/register" className="text-[10px] uppercase tracking-[0.2em] font-black text-dark flex items-center gap-2 group-hover:text-primary transition-colors">
                 Join Network <ArrowRight size={12} />
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
         </div>
@@ -343,7 +343,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
               <Link href="/register" className="w-full sm:w-auto px-12 py-5 bg-primary text-white text-[11px] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-primary/30 hover:scale-105 active:scale-95 transition-all">
-                Join the Network
+                See Catalog
               </Link>
               <Link href="/contact" className="w-full sm:w-auto px-12 py-5 bg-dark text-white text-[11px] uppercase tracking-[0.2em] font-bold rounded-sm hover:bg-slate-800 transition-all">
                 Talk to Sourcing

@@ -1,14 +1,14 @@
 'use client';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { 
-  Search, 
-  RefreshCw, 
-  Zap, 
-  Truck, 
-  CheckCircle2, 
-  CreditCard, 
-  Tag, 
+import {
+  Search,
+  RefreshCw,
+  Zap,
+  Truck,
+  CheckCircle2,
+  CreditCard,
+  Tag,
   Users,
   Globe,
   ArrowRight
@@ -46,7 +46,7 @@ export default function About() {
     {
       number: '02',
       title: 'Automate Orders',
-      description: 'Place orders directly or integrate via our free API for real-time stock and pricing.',
+      description: 'Place orders directly by phone, email, online or whatsapp.',
       icon: RefreshCw,
       color: 'emerald'
     },
@@ -79,7 +79,7 @@ export default function About() {
     },
     {
       title: 'No Hidden Fees',
-      description: 'Free API, no subscription, full transparency.',
+      description: 'No subscription, full transparency.',
       icon: CreditCard
     },
     {
@@ -111,7 +111,7 @@ export default function About() {
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           Who We Are
         </motion.div>
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-5xl md:text-7xl font-sans font-bold tracking-tighter text-dark mb-10 leading-[0.95]"
@@ -119,22 +119,22 @@ export default function About() {
           Digital Distribution <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-rose-400">Perfected.</span>
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-slate-600 leading-relaxed text-lg md:text-xl font-light max-w-3xl mx-auto"
         >
-          Symphonya is a dedicated digital distribution platform that connects suppliers and retailers, bringing innovation and transparency to cross-border e-commerce.
+          Fragrance Distributors EU is a dedicated digital distribution platform that connects suppliers and retailers, bringing innovation and transparency to cross-border e-commerce.
         </motion.p>
       </section>
 
       {/* Full width image / Mission */}
       <section className="relative w-full py-32 bg-dark overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=2000&auto=format&fit=crop" 
-            alt="Logistics" 
+          <img
+            src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=2000&auto=format&fit=crop"
+            alt="Logistics"
             className="w-full h-full object-cover grayscale"
           />
         </div>
@@ -224,21 +224,21 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Final Tech CTA */}
       <section className="py-40 px-4 text-center relative overflow-hidden bg-white">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-sans font-bold tracking-tight text-slate-50 whitespace-nowrap pointer-events-none uppercase opacity-10">SYMPHONYA</div>
         <div className="max-w-3xl mx-auto relative z-10 border border-slate-200 p-12 md:p-24 bg-white shadow-2xl rounded-[40px]">
-           <span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em] mb-6 block">Get Started</span>
-           <h2 className="font-sans font-bold tracking-tighter text-4xl md:text-5xl mb-10 text-dark leading-tight">Ready to transform your distribution?</h2>
-           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <Link href="/register" className="w-full sm:w-auto px-10 py-4 bg-primary text-white text-[11px] uppercase tracking-widest font-bold rounded-sm shadow-lg shadow-primary/20 hover:scale-105 transition-all">
-                Join B2B Network
-              </Link>
-              <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-dark text-white text-[11px] uppercase tracking-widest font-bold rounded-sm hover:bg-slate-800 transition-all">
-                Talk to Sales
-              </Link>
-           </div>
+          <span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em] mb-6 block">Get Started</span>
+          <h2 className="font-sans font-bold tracking-tighter text-4xl md:text-5xl mb-10 text-dark leading-tight">Ready to transform your distribution?</h2>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <Link href="/register" className="w-full sm:w-auto px-10 py-4 bg-primary text-white text-[11px] uppercase tracking-widest font-bold rounded-sm shadow-lg shadow-primary/20 hover:scale-105 transition-all">
+              Join B2B Network
+            </Link>
+            <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-dark text-white text-[11px] uppercase tracking-widest font-bold rounded-sm hover:bg-slate-800 transition-all">
+              Talk to Sales
+            </Link>
+          </div>
         </div>
       </section>
 
