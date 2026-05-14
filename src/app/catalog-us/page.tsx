@@ -29,99 +29,55 @@ interface CatalogRecord {
   'PRICE GBP': string | number;
 }
 
-// Static metadata for EU Stock Catalogs (Lazy loaded to prevent bloating page load)
+// Static metadata for US Stock Catalogs (Lazy loaded)
 const sheetsMetadata = [
   {
-    id: 'eu_1',
-    fileName: 'eu_1.json',
-    title: 'EU Distribution Hub Alpha',
-    description: 'Large-scale assortment across designer and prestige staples, featuring high availability for regional distribution.',
-    tag: 'EU Stock 1',
-    colorClass: 'emerald',
-    rowCount: 3102,
-    sizeEstimate: '718.7 KB',
-    readyQty: 1116720,
-    topBrands: 'Ajmal, Antonio Banderas, Aramis, Azzaro, Benefit...',
-    iconBg: 'bg-emerald-500/10',
-    iconColor: 'text-emerald-500',
-    borderColor: 'border-emerald-500/20',
-    accentGradient: 'from-emerald-500/20 to-teal-500/10',
-    btnColor: 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/20',
+    id: 'us_1',
+    fileName: 'us_1.json',
+    title: 'US Domestic Main Stock',
+    description: 'Fast-moving wholesale domestic stock ready for immediate nationwide delivery across the United States.',
+    tag: 'US Stock 1',
+    colorClass: 'sky',
+    rowCount: 1183,
+    sizeEstimate: '285.7 KB',
+    readyQty: 206453,
+    topBrands: '4711, Adidas, Afnan, Ahsan, Al Haramain, Al Rehab...',
+    iconBg: 'bg-sky-500/10',
+    iconColor: 'text-sky-500',
+    borderColor: 'border-sky-500/20',
+    accentGradient: 'from-sky-500/20 to-blue-500/10',
+    btnColor: 'bg-sky-600 hover:bg-sky-500 shadow-sky-600/20',
     preview: [
-      { BRAND: 'Ajmal', DESCRIPTION: 'Shadow 75Ml' },
-      { BRAND: 'Ajmal', DESCRIPTION: 'Entice 75Ml' },
-      { BRAND: 'Ajmal', DESCRIPTION: 'Blu Edp 90Ml' }
+      { BRAND: '4711', DESCRIPTION: '4711 10.1 OZ EDC SPLASH' },
+      { BRAND: '4711', DESCRIPTION: '4711 13.5 OZ EDC SPLASH' },
+      { BRAND: '4711', DESCRIPTION: '4711 27.1 OZ EDC SPLASH' }
     ]
   },
   {
-    id: 'eu_2',
-    fileName: 'eu_2.json',
-    title: 'EU Boutique & Select Lines',
-    description: 'Handpicked boutique scents and exclusive regional exclusives including high-demand niche cosmetics.',
-    tag: 'EU Stock 2',
-    colorClass: 'indigo',
-    rowCount: 383,
-    sizeEstimate: '105.9 KB',
-    readyQty: 14194,
-    topBrands: 'Acqua di Parma, Agatha Paris, Bobbi Brown, Burberry...',
-    iconBg: 'bg-indigo-500/10',
-    iconColor: 'text-indigo-500',
-    borderColor: 'border-indigo-500/20',
-    accentGradient: 'from-indigo-500/20 to-blue-500/10',
-    btnColor: 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/20',
+    id: 'us_2',
+    fileName: 'us_2.json',
+    title: 'US Select Designer Strains',
+    description: 'Premium high-prestige and niche boutique stock portfolios catering to high-end US retail networks.',
+    tag: 'US Stock 2',
+    colorClass: 'violet',
+    rowCount: 1530,
+    sizeEstimate: '372.6 KB',
+    readyQty: 87357,
+    topBrands: '273, 4711, Abercrombie, Acqua, Afnan, Ajmal...',
+    iconBg: 'bg-violet-500/10',
+    iconColor: 'text-violet-500',
+    borderColor: 'border-violet-500/20',
+    accentGradient: 'from-violet-500/20 to-purple-500/10',
+    btnColor: 'bg-violet-600 hover:bg-violet-500 shadow-violet-600/20',
     preview: [
-      { BRAND: 'Acqua di Parma', DESCRIPTION: 'Set Signatures Of The Sun...' },
-      { BRAND: 'Acqua di Parma', DESCRIPTION: 'Set Colonia Futura...' },
-      { BRAND: 'Acqua di Parma', DESCRIPTION: 'Magia Del Camino Aroma...' }
-    ]
-  },
-  {
-    id: 'eu_3',
-    fileName: 'eu_3.json',
-    title: 'Main EU Megastore Inventory',
-    description: 'Our flagship catalog with over 25,000 distinct SKU records covering globally recognized designer houses.',
-    tag: 'EU Stock 3',
-    colorClass: 'amber',
-    rowCount: 25782,
-    sizeEstimate: '7.1 MB',
-    readyQty: 710823,
-    topBrands: '4711, 100 Bon, 111 Skin, Abercrombie & Fitch...',
-    iconBg: 'bg-amber-500/10',
-    iconColor: 'text-amber-500',
-    borderColor: 'border-amber-500/20',
-    accentGradient: 'from-amber-500/20 to-yellow-500/10',
-    btnColor: 'bg-amber-600 hover:bg-amber-500 shadow-amber-600/20',
-    preview: [
-      { BRAND: '4711', DESCRIPTION: 'Set Acqua Colonia Lychee...' },
-      { BRAND: '4711', DESCRIPTION: 'Set Acqua Colonia White...' },
-      { BRAND: '4711', DESCRIPTION: 'Set Acqua Colonia Lemon...' }
-    ]
-  },
-  {
-    id: 'eu_4',
-    fileName: 'eu_4.json',
-    title: 'Premium EU Designer Reserve',
-    description: 'Exclusive high-velocity designer catalogs tailored for high-volume retail and large distributors.',
-    tag: 'EU Stock 4',
-    colorClass: 'rose',
-    rowCount: 7032,
-    sizeEstimate: '1.8 MB',
-    readyQty: 832221,
-    topBrands: '100 Bon, 3Lab, 4711, Abercrombie & Fitch...',
-    iconBg: 'bg-rose-500/10',
-    iconColor: 'text-rose-500',
-    borderColor: 'border-rose-500/20',
-    accentGradient: 'from-rose-500/20 to-pink-500/10',
-    btnColor: 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20',
-    preview: [
-      { BRAND: '100 Bon', DESCRIPTION: 'Carvi & Jardin De Figuier...' },
-      { BRAND: '100 Bon', DESCRIPTION: 'Nagaranga & Santal Citronn...' },
-      { BRAND: '100 Bon', DESCRIPTION: 'Bergamote & Rose Sauvage...' }
+      { BRAND: '273', DESCRIPTION: '273 L 2.5 EDP SPR' },
+      { BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA BLOOD...' },
+      { BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA BLOOD...' }
     ]
   }
 ];
 
-export default function Catalog() {
+export default function UsCatalog() {
   const [activeSheetId, setActiveSheetId] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -135,7 +91,7 @@ export default function Catalog() {
   // Spreadsheet cell state
   const [selectedCell, setSelectedCell] = useState<{ row: number; colName: string; value: string } | null>(null);
 
-  // Pagination limit to avoid sluggish DOM renders for huge arrays
+  // Pagination limit
   const [visibleRowsCount, setVisibleRowsCount] = useState(50);
 
   // Find currently active sheet configuration
@@ -143,29 +99,24 @@ export default function Catalog() {
     return sheetsMetadata.find((s) => s.id === activeSheetId) || sheetsMetadata[0];
   }, [activeSheetId]);
 
-  // Dynamically import JSON chunks on-demand to keep bundle sizes highly optimized
+  // Dynamically import JSON chunks
   const loadSheetData = async (id: string) => {
     if (loadedData[id]) return loadedData[id];
     
     setIsLoadingData(true);
     try {
       let data;
-      // Using Webpack Dynamic Imports to stream data chunks only when requested
-      if (id === 'eu_1') {
-        data = (await import('../../data/eu_1.json')).default;
-      } else if (id === 'eu_2') {
-        data = (await import('../../data/eu_2.json')).default;
-      } else if (id === 'eu_3') {
-        data = (await import('../../data/eu_3.json')).default;
-      } else if (id === 'eu_4') {
-        data = (await import('../../data/eu_4.json')).default;
+      if (id === 'us_1') {
+        data = (await import('../../data/us_1.json')).default;
+      } else if (id === 'us_2') {
+        data = (await import('../../data/us_2.json')).default;
       }
       
       const typedData = data as CatalogRecord[];
       setLoadedData(prev => ({ ...prev, [id]: typedData }));
       return typedData;
     } catch (error) {
-      console.error('Failed to dynamically load digital portfolio catalog', error);
+      console.error('Failed to dynamically load US digital catalog', error);
     } finally {
       setIsLoadingData(false);
     }
@@ -194,35 +145,32 @@ export default function Catalog() {
 
   // Calculate dynamic stats for the active dataset
   const activeStats = useMemo(() => {
-    if (!activeSheet) return { totalSkus: 0, totalStock: 0, avgPriceEur: 0, distinctBrands: 0 };
+    if (!activeSheet) return { totalSkus: 0, totalStock: 0, avgPriceUsd: 0, distinctBrands: 0 };
     
     const items = loadedData[activeSheet.id] || [];
-    
-    // Core stats are immediate from static metadata, pricing requires loaded dataset
     const totalSkus = activeSheet.rowCount;
     const totalStock = activeSheet.readyQty;
     
-    let avgPriceEur = 0;
+    let avgPriceUsd = 0;
     let distinctBrands = 0;
 
     if (items.length > 0) {
-      const sumEur = items.reduce((sum, item) => {
-        const val = typeof item['PRICE EUR'] === 'number' ? item['PRICE EUR'] : parseFloat(String(item['PRICE EUR']).replace(/[^0-9.]/g, '')) || 0;
+      const sumUsd = items.reduce((sum, item) => {
+        const val = typeof item['PRICE USD'] === 'number' ? item['PRICE USD'] : parseFloat(String(item['PRICE USD']).replace(/[^0-9.]/g, '')) || 0;
         return sum + val;
       }, 0);
-      avgPriceEur = sumEur / items.length;
+      avgPriceUsd = sumUsd / items.length;
       distinctBrands = new Set(items.map((item) => item.BRAND)).size;
     }
 
-    return { totalSkus, totalStock, avgPriceEur, distinctBrands };
+    return { totalSkus, totalStock, avgPriceUsd, distinctBrands };
   }, [activeSheet, loadedData]);
 
-  // Sorting and Filtering logic
+  // Sorting and Filtering
   const filteredAndSortedRecords = useMemo(() => {
     const recordsRaw = loadedData[activeSheet.id] || [];
     if (recordsRaw.length === 0) return [];
 
-    // 1. Filter
     let records = recordsRaw.filter((row) => {
       const eanStr = String(row.EAN || '').toLowerCase();
       const brandStr = String(row.BRAND || '').toLowerCase();
@@ -231,13 +179,11 @@ export default function Catalog() {
       return eanStr.includes(query) || brandStr.includes(query) || descStr.includes(query);
     });
 
-    // 2. Sort
     if (sortField) {
       records = [...records].sort((a, b) => {
         let valA = a[sortField];
         let valB = b[sortField];
 
-        // Convert values to comparable formats
         if (typeof valA === 'string' && typeof valB === 'string') {
           return sortDirection === 'asc'
             ? valA.localeCompare(valB)
@@ -256,7 +202,6 @@ export default function Catalog() {
     return records;
   }, [activeSheet.id, loadedData, searchQuery, sortField, sortDirection]);
 
-  // Handle column sorting toggle
   const requestSort = (field: keyof CatalogRecord) => {
     let direction: 'asc' | 'desc' = 'asc';
     if (sortField === field && sortDirection === 'asc') {
@@ -266,19 +211,17 @@ export default function Catalog() {
     setSortDirection(direction);
   };
 
-  // Cell click handler
   const handleCellClick = (rowIdx: number, colName: string, value: any) => {
     setSelectedCell({ row: rowIdx + 1, colName, value: String(value) });
   };
 
-  // Real CSV File Export Trigger
   const exportToCSV = () => {
     const data = loadedData[activeSheet.id] || [];
     if (data.length === 0) return;
     
     const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
     const csvRows = [
-      headers.join(','), // Header row
+      headers.join(','),
       ...data.map((row) =>
         [
           `"${String(row.EAN).replace(/"/g, '""')}"`,
@@ -312,21 +255,21 @@ export default function Catalog() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/50 text-[10px] uppercase tracking-widest font-bold text-emerald-600 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200/50 text-[10px] uppercase tracking-widest font-bold text-sky-600 mb-6"
           >
             <Sparkles size={12} className="animate-pulse" />
-            EU Inventory Portfolios
+            US Inventory Portfolios
           </motion.div>
           <h1 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-dark mb-4">
-            Digital Wholesale Portfolios (EU)
+            Digital Wholesale Portfolios (US)
           </h1>
           <p className="text-slate-600 font-light max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            Explore dynamic wholesale stock feeds in real time. Select a catalog below to open the spreadsheet emulator, search inventory models, and export to CSV instantly.
+            Explore dynamic North American wholesale stocks. Select a catalog below to open the spreadsheet emulator, search inventory models, and export to CSV instantly.
           </p>
         </div>
 
-        {/* 4 Excel Skeleton Cards Grid - Optimized 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* 2 Excel Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
           {sheetsMetadata.map((sheet, index) => {
             return (
               <motion.div
@@ -334,13 +277,11 @@ export default function Catalog() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`group relative bg-white border ${sheet.borderColor} rounded-2xl shadow-sm hover:shadow-xl hover:border-emerald-500/30 transition-all duration-500 overflow-hidden flex flex-col`}
+                className={`group relative bg-white border ${sheet.borderColor} rounded-2xl shadow-sm hover:shadow-xl hover:border-sky-500/30 transition-all duration-500 overflow-hidden flex flex-col`}
               >
-                {/* Visual Accent Bar */}
                 <div className={`h-2 bg-gradient-to-r ${sheet.accentGradient} border-b ${sheet.borderColor}`} />
 
                 <div className="p-8 flex-grow flex flex-col">
-                  {/* File Info Header */}
                   <div className="flex items-start justify-between mb-6">
                     <div className={`p-4 rounded-xl ${sheet.iconBg} ${sheet.iconColor} transition-transform group-hover:scale-110 duration-300`}>
                       <FileSpreadsheet size={28} />
@@ -350,14 +291,13 @@ export default function Catalog() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-emerald-600 transition-colors">
+                  <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-sky-600 transition-colors">
                     {sheet.title}
                   </h3>
                   <p className="text-slate-500 text-xs font-light leading-relaxed mb-6 flex-grow">
                     {sheet.description}
                   </p>
 
-                  {/* Excel Spreadsheet Skeleton Section */}
                   <div className="relative mb-6 rounded-lg border border-slate-200 bg-slate-50/50 p-2 overflow-hidden select-none">
                     <div className="flex text-[9px] font-mono text-slate-400 border-b border-slate-200 pb-1.5 mb-1.5">
                       <div className="w-1/12 text-center border-r border-slate-200">#</div>
@@ -383,11 +323,9 @@ export default function Catalog() {
                         </div>
                       ))}
                     </div>
-                    {/* Excel Style gridlines layer */}
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none opacity-80" />
                   </div>
 
-                  {/* Card Metadata Footer */}
                   <div className="grid grid-cols-3 gap-2 border-t border-slate-100 pt-4 mb-6 text-center text-[10px]">
                     <div>
                       <span className="block text-slate-400 uppercase font-bold tracking-widest text-[8px] mb-1">SKU Rows</span>
@@ -399,13 +337,12 @@ export default function Catalog() {
                     </div>
                     <div>
                       <span className="block text-slate-400 uppercase font-bold tracking-widest text-[8px] mb-1">Ready Qty</span>
-                      <span className="font-bold text-emerald-600 font-mono">
+                      <span className="font-bold text-sky-600 font-mono">
                         {sheet.readyQty.toLocaleString()}
                       </span>
                     </div>
                   </div>
 
-                  {/* Interactive Button */}
                   <button
                     id={`btn-open-sheet-${sheet.id}`}
                     onClick={() => openSpreadsheet(sheet.id)}
@@ -437,11 +374,10 @@ export default function Catalog() {
               transition={{ type: 'spring', damping: 25 }}
               className="bg-white w-full max-w-7xl h-[92vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200"
             >
-
-              {/* Modal Spreadsheet Header / Controls */}
+              {/* Header */}
               <div className="bg-slate-900 text-white px-6 py-4 flex flex-col md:flex-row md:items-center justify-between border-b border-slate-800 gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-emerald-500 text-white shadow-lg shadow-emerald-500/20">
+                  <div className="p-2.5 rounded-lg bg-sky-500 text-white shadow-lg shadow-sky-500/20">
                     <FileSpreadsheet size={20} />
                   </div>
                   <div>
@@ -453,7 +389,6 @@ export default function Catalog() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  {/* Real-time Search Box */}
                   <div className="relative w-full md:w-64">
                     <input
                       id="spreadsheet-search"
@@ -463,9 +398,9 @@ export default function Catalog() {
                       disabled={isLoadingData}
                       onChange={(e) => {
                         setSearchQuery(e.target.value);
-                        setVisibleRowsCount(50); // Reset pagination on filter
+                        setVisibleRowsCount(50);
                       }}
-                      className="w-full pl-9 pr-4 py-2 text-xs bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-all font-sans disabled:opacity-50"
+                      className="w-full pl-9 pr-4 py-2 text-xs bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-all font-sans disabled:opacity-50"
                     />
                     <Search className="absolute left-3 top-2.5 text-slate-400" size={13} />
                     {searchQuery && (
@@ -478,18 +413,16 @@ export default function Catalog() {
                     )}
                   </div>
 
-                  {/* CSV Export Button */}
                   <button
                     id="btn-export-csv"
                     onClick={exportToCSV}
                     disabled={isLoadingData || (loadedData[activeSheet.id] || []).length === 0}
-                    className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 shadow-md shadow-emerald-600/10 shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 shadow-md shadow-sky-600/10 shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Download size={13} />
                     Export CSV
                   </button>
 
-                  {/* Close Modal */}
                   <button
                     id="btn-close-modal"
                     onClick={() => setModalOpen(false)}
@@ -500,7 +433,7 @@ export default function Catalog() {
                 </div>
               </div>
 
-              {/* Excel Tabs - Allows switching sheets directly inside modal */}
+              {/* Tabs */}
               <div className="bg-slate-100 px-6 border-b border-slate-200 flex items-center gap-2 overflow-x-auto">
                 {sheetsMetadata.map((sheet) => (
                   <button
@@ -508,7 +441,7 @@ export default function Catalog() {
                     key={sheet.id}
                     onClick={() => switchSheetInModal(sheet.id)}
                     className={`px-4 py-2.5 text-xs font-sans font-bold flex items-center gap-2 border-b-2 transition-all shrink-0 ${activeSheetId === sheet.id
-                        ? 'border-emerald-600 bg-white text-emerald-600 font-extrabold'
+                        ? 'border-sky-600 bg-white text-sky-600 font-extrabold'
                         : 'border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
                       }`}
                   >
@@ -518,7 +451,7 @@ export default function Catalog() {
                 ))}
               </div>
 
-              {/* KPI Summary Strip inside Spreadsheet */}
+              {/* Summary Strip */}
               <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-white p-3 rounded-lg border border-slate-200/60 shadow-sm flex items-center gap-3">
                   <div className="p-2 bg-slate-100 rounded-md text-slate-600"><Database size={15} /></div>
@@ -528,18 +461,18 @@ export default function Catalog() {
                   </div>
                 </div>
                 <div className="bg-white p-3 rounded-lg border border-slate-200/60 shadow-sm flex items-center gap-3">
-                  <div className="p-2 bg-emerald-50 rounded-md text-emerald-600"><Package size={15} /></div>
+                  <div className="p-2 bg-sky-50 rounded-md text-sky-600"><Package size={15} /></div>
                   <div>
                     <span className="block text-[8px] uppercase tracking-wider text-slate-400 font-bold">Total Stock (Units)</span>
-                    <span className="text-xs font-mono font-bold text-emerald-600">{activeStats.totalStock.toLocaleString()}</span>
+                    <span className="text-xs font-mono font-bold text-sky-600">{activeStats.totalStock.toLocaleString()}</span>
                   </div>
                 </div>
                 <div className="bg-white p-3 rounded-lg border border-slate-200/60 shadow-sm flex items-center gap-3">
                   <div className="p-2 bg-amber-50 rounded-md text-amber-600"><Coins size={15} /></div>
                   <div>
-                    <span className="block text-[8px] uppercase tracking-wider text-slate-400 font-bold">Average Price (EUR)</span>
+                    <span className="block text-[8px] uppercase tracking-wider text-slate-400 font-bold">Average Price (USD)</span>
                     <span className="text-xs font-mono font-bold text-dark">
-                      {isLoadingData ? '...' : `€${activeStats.avgPriceEur.toFixed(2)}`}
+                      {isLoadingData ? '...' : `$${activeStats.avgPriceUsd.toFixed(2)}`}
                     </span>
                   </div>
                 </div>
@@ -554,9 +487,9 @@ export default function Catalog() {
                 </div>
               </div>
 
-              {/* Excel Address/Formula Bar */}
+              {/* Formula Bar */}
               <div className="bg-slate-50 border-b border-slate-200 px-6 py-2 flex items-center gap-2 font-mono text-[11px] text-slate-600 select-none">
-                <div className="bg-white px-2.5 py-1 border border-slate-200 rounded font-bold text-emerald-600 w-16 text-center shadow-sm">
+                <div className="bg-white px-2.5 py-1 border border-slate-200 rounded font-bold text-sky-600 w-16 text-center shadow-sm">
                   {selectedCell ? `${selectedCell.colName}${selectedCell.row}` : 'A1'}
                 </div>
                 <div className="text-slate-400 italic font-bold select-none px-1 font-serif text-sm">fx</div>
@@ -569,66 +502,63 @@ export default function Catalog() {
                 </div>
               </div>
 
-              {/* Interactive Spreadsheet Grid View */}
+              {/* Grid */}
               <div className="flex-grow overflow-auto relative">
                 <table className="w-full text-left border-collapse table-fixed min-w-[900px]">
-
-                  {/* Excel Column Letters Header */}
                   <thead className="sticky top-0 bg-slate-100 z-10 text-[10px] font-mono text-slate-500 shadow-[0_1px_0_0_rgba(226,232,240,1)]">
                     <tr>
                       <th className="w-12 bg-slate-200 border-r border-b border-slate-300 text-center select-none font-bold py-1.5 font-mono"></th>
 
                       <th className="w-36 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('EAN')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('EAN')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col A (EAN) <ArrowUpDown size={10} />
                         </button>
                       </th>
 
                       <th className="w-32 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('BRAND')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('BRAND')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col B (BRAND) <ArrowUpDown size={10} />
                         </button>
                       </th>
 
                       <th className="w-80 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('DESCRIPTION')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('DESCRIPTION')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col C (DESCRIPTION) <ArrowUpDown size={10} />
                         </button>
                       </th>
 
                       <th className="w-24 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('READY QTYS')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('READY QTYS')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col D (QTY) <ArrowUpDown size={10} />
                         </button>
                       </th>
 
                       <th className="w-28 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('PRICE EUR')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('PRICE EUR')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col E (PRICE €) <ArrowUpDown size={10} />
                         </button>
                       </th>
 
                       <th className="w-28 border-r border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('PRICE USD')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('PRICE USD')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col F (PRICE $) <ArrowUpDown size={10} />
                         </button>
                       </th>
 
                       <th className="w-28 border-b border-slate-200 px-3 select-none font-bold py-1.5">
-                        <button onClick={() => requestSort('PRICE GBP')} className="flex items-center gap-1 hover:text-emerald-600 transition-colors w-full uppercase">
+                        <button onClick={() => requestSort('PRICE GBP')} className="flex items-center gap-1 hover:text-sky-600 transition-colors w-full uppercase">
                           Col G (PRICE £) <ArrowUpDown size={10} />
                         </button>
                       </th>
                     </tr>
                   </thead>
 
-                  {/* Excel Data Rows */}
                   <tbody className="divide-y divide-slate-150 font-mono text-xs text-slate-700">
                     {isLoadingData ? (
                       <tr>
                         <td colSpan={8} className="py-32 text-center text-slate-400 font-sans">
                           <div className="flex flex-col items-center justify-center gap-4">
-                            <Loader2 size={32} className="animate-spin text-emerald-500" />
+                            <Loader2 size={32} className="animate-spin text-sky-500" />
                             <div className="space-y-1">
                               <p className="text-dark font-bold text-sm">Processing Digital Dataset ({activeSheet.sizeEstimate})</p>
                               <p className="text-xs text-slate-400">Deserializing data frames. This will just take a second...</p>
@@ -647,69 +577,61 @@ export default function Catalog() {
 
                       return (
                         <tr key={index} className="hover:bg-slate-50/70 transition-colors">
-                          {/* Row Number Column */}
                           <td className="bg-slate-100 border-r border-slate-200 text-center select-none font-bold text-[10px] text-slate-400 py-1.5 font-mono">
                             {index + 1}
                           </td>
 
-                          {/* EAN Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'A', row.EAN)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-mono select-text truncate ${isEanSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-mono select-text truncate ${isEanSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {row.EAN}
                           </td>
 
-                          {/* Brand Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'B', row.BRAND)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-semibold truncate ${isBrandSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-semibold truncate ${isBrandSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {row.BRAND}
                           </td>
 
-                          {/* Description Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'C', row.DESCRIPTION)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-slate-600 font-light truncate ${isDescSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-slate-600 font-light truncate ${isDescSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {row.DESCRIPTION}
                           </td>
 
-                          {/* Quantity Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'D', row['READY QTYS'])}
                             className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold ${Number(row['READY QTYS']) < 10 ? 'text-amber-600' : 'text-slate-700'
-                              } ${isQtySelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''}`}
+                              } ${isQtySelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''}`}
                           >
                             {Number(row['READY QTYS']).toLocaleString()}
                           </td>
 
-                          {/* Price EUR Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'E', row['PRICE EUR'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-emerald-600 font-semibold ${isEurSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isEurSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             €{Number(row['PRICE EUR']).toFixed(2)}
                           </td>
 
-                          {/* Price USD Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'F', row['PRICE USD'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isUsdSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-sky-600 font-semibold ${isUsdSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             ${Number(row['PRICE USD']).toFixed(2)}
                           </td>
 
-                          {/* Price GBP Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'G', row['PRICE GBP'])}
-                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isGbpSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isGbpSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {typeof row['PRICE GBP'] === 'number' ? `£${row['PRICE GBP'].toFixed(2)}` : row['PRICE GBP']}
@@ -720,7 +642,6 @@ export default function Catalog() {
                   </tbody>
                 </table>
 
-                {/* Empty State */}
                 {!isLoadingData && filteredAndSortedRecords.length === 0 && (
                   <div className="text-center py-24 text-slate-400 text-xs font-sans flex flex-col items-center justify-center gap-2">
                     <Database size={24} className="text-slate-300" />
@@ -729,7 +650,6 @@ export default function Catalog() {
                 )}
               </div>
 
-              {/* Paginated Load More Section */}
               {!isLoadingData && filteredAndSortedRecords.length > visibleRowsCount && (
                 <div className="bg-slate-50 border-t border-slate-200 px-6 py-3 flex justify-between items-center shrink-0">
                   <span className="text-[10px] text-slate-500 font-sans font-light">

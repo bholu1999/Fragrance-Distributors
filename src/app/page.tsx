@@ -129,14 +129,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-5 flex-wrap"
           >
-            <Link href="/catalog" className="group relative px-10 py-5 rounded-sm bg-primary text-white text-[11px] uppercase tracking-[0.2em] font-bold shadow-[0_0_20px_rgba(247,27,99,0.2)] hover:shadow-[0_0_30px_rgba(247,27,99,0.4)] transition-all overflow-hidden border border-primary">
-              <span className="relative z-10">Browse Catalog</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <Link href="/catalog" className="group relative px-8 py-4 rounded-sm bg-primary text-white text-[10px] uppercase tracking-[0.2em] font-bold shadow-[0_0_20px_rgba(247,27,99,0.15)] hover:shadow-[0_0_30px_rgba(247,27,99,0.3)] transition-all overflow-hidden border border-primary">
+              <span className="relative z-10">EU Stock Catalog</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </Link>
-            <Link href="/contact" className="px-10 py-5 rounded-sm bg-transparent text-white text-[11px] uppercase tracking-[0.2em] font-bold border border-slate-600 hover:bg-white hover:text-dark transition-all backdrop-blur-sm">
-              Ordering Information
+            <Link href="/catalog-us" className="group relative px-8 py-4 rounded-sm bg-emerald-600 text-white text-[10px] uppercase tracking-[0.2em] font-bold shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all overflow-hidden border border-emerald-600">
+              <span className="relative z-10">US Stock Catalog</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </Link>
           </motion.div>
 
@@ -296,9 +297,14 @@ export default function Home() {
               <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-black mb-4 block">How it Works</span>
               <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter text-dark ">Seamless B2B Partnership</h2>
             </div>
-            <Link href="/catalog" className="px-8 py-3 bg-slate-100 text-dark text-[11px] uppercase tracking-widest font-black rounded-sm hover:bg-dark hover:text-white transition-all">
-              Full Catalog &rarr;
-            </Link>
+            <div className="flex gap-3 shrink-0">
+              <Link href="/catalog" className="px-6 py-3 bg-slate-100 text-dark text-[10px] uppercase tracking-widest font-black rounded-sm hover:bg-dark hover:text-white transition-all">
+                EU STOCK &rarr;
+              </Link>
+              <Link href="/catalog-us" className="px-6 py-3 bg-slate-100 text-dark text-[10px] uppercase tracking-widest font-black rounded-sm hover:bg-dark hover:text-white transition-all">
+                US STOCK &rarr;
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -341,12 +347,15 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-dark mb-10 leading-[0.95]">Ready to automate <br />your retail strategy?</h2>
             <p className="text-slate-500 text-lg mb-14 max-w-xl mx-auto">Access the high-velocity supply chain engine for international niche, designer, and artisan fragrances.</p>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <Link href="/register" className="w-full sm:w-auto px-12 py-5 bg-primary text-white text-[11px] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-primary/30 hover:scale-105 active:scale-95 transition-all">
-                See Catalog
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 flex-wrap">
+              <Link href="/catalog" className="w-full sm:w-auto px-8 py-4 bg-primary text-white text-[10px] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-primary/20 hover:scale-105 transition-all">
+                EU Catalog
               </Link>
-              <Link href="/contact" className="w-full sm:w-auto px-12 py-5 bg-dark text-white text-[11px] uppercase tracking-[0.2em] font-bold rounded-sm hover:bg-slate-800 transition-all">
-                Talk to Sourcing
+              <Link href="/catalog-us" className="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white text-[10px] uppercase tracking-[0.2em] font-bold rounded-sm shadow-xl shadow-emerald-600/20 hover:scale-105 transition-all">
+                US Catalog
+              </Link>
+              <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-dark text-white text-[10px] uppercase tracking-[0.2em] font-bold rounded-sm hover:bg-slate-800 transition-all">
+                Talk Sourcing
               </Link>
             </div>
           </motion.div>

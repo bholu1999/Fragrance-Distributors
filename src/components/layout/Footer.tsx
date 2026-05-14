@@ -29,8 +29,8 @@ export default function Footer() {
           <h4 className="font-sans font-bold tracking-tight text-white mb-6">Platform</h4>
           <ul className="space-y-3">
             <li><Link href="/about" className="text-slate-400 hover:text-primary text-sm transition-colors">Our Infrastructure</Link></li>
-            <li><Link href="/catalog" className="text-slate-400 hover:text-primary text-sm transition-colors">Digital Catalog</Link></li>
-            <li><Link href="/download" className="text-slate-400 hover:text-primary text-sm transition-colors">Excel Download</Link></li>
+            <li><Link href="/catalog" className="text-slate-400 hover:text-primary text-sm transition-colors">EU Stock Catalog</Link></li>
+            <li><Link href="/catalog-us" className="text-slate-400 hover:text-primary text-sm transition-colors">US Stock Catalog</Link></li>
           </ul>
         </div>
 

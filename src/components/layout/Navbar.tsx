@@ -3,18 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Info, Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-
-// Import JSON catalog files directly for downloading
-import clarinsData from '../../data/Clarins (Skincare GiftSets).json';
-import isseyData from '../../data/Issey Miyake Narciso Rodriguez Zadig Voltaire.json';
-import mixedData from '../../data/Mixed Selection.json';
+import OrderingInformationModal from '../ui/OrderingInformationModal';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isOrderingModalOpen, setIsOrderingModalOpen] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -28,51 +26,76 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Our Platform', path: '/about' },
-    { name: 'Digital Catalog', path: '/catalog' },
+    { name: 'Platform', path: '/about' },
+    { name: 'EU Catalog', path: '/catalog' },
+    { name: 'US Catalog', path: '/catalog-us' },
     { name: 'Contact', path: '/contact' },
   ];
 
   const isTransparent = isHome && !scrolled;
 
-  // Trigger sequential CSV downloads for all 3 datasets
-  const downloadAllCatalogs = () => {
-    const datasets = [
-      { name: 'Clarins_Skincare_GiftSets.csv', data: clarinsData },
-      { name: 'Issey_Miyake_Narciso_Rodriguez_Zadig_Voltaire.csv', data: isseyData },
-      { name: 'Mixed_Selection.csv', data: mixedData }
-    ];
+  // Dynamic async lazy-loading macro for bulk catalog downloads
+  const downloadAllCatalogs = async () => {
+    if (isDownloading) return;
+    setIsDownloading(true);
 
-    datasets.forEach((dataset, idx) => {
-      // Delay downloads slightly to avoid browser pop-up blocking
-      setTimeout(() => {
-        const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
-        const csvRows = [
-          headers.join(','),
-          ...dataset.data.map((row: any) =>
-            [
-              row.EAN,
-              `"${row.BRAND.replace(/"/g, '""')}"`,
-              `"${row.STATUS.replace(/"/g, '""')}"`,
-              `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
-              row['READY QTYS'],
-              row['PRICE EUR'],
-              row['PRICE USD'],
-              typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
-            ].join(',')
-          )
-        ];
+    try {
+      // Chunk-split imports to preserve zero-latency loading
+      const eu1 = (await import('../../data/eu_1.json')).default;
+      const eu2 = (await import('../../data/eu_2.json')).default;
+      const eu3 = (await import('../../data/eu_3.json')).default;
+      const eu4 = (await import('../../data/eu_4.json')).default;
+      const us1 = (await import('../../data/us_1.json')).default;
+      const us2 = (await import('../../data/us_2.json')).default;
 
-        const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
-        const encodedUri = encodeURI(csvContent);
-        const link = document.createElement('a');
-        link.setAttribute('href', encodedUri);
-        link.setAttribute('download', dataset.name);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }, idx * 350); // 350ms delay
-    });
+      const datasets = [
+        { name: 'EU_Distribution_Hub_Alpha.csv', data: eu1 },
+        { name: 'EU_Boutique_Select_Lines.csv', data: eu2 },
+        { name: 'EU_Main_Megastore_Inventory.csv', data: eu3 },
+        { name: 'EU_Premium_Designer_Reserve.csv', data: eu4 },
+        { name: 'US_Domestic_Main_Stock.csv', data: us1 },
+        { name: 'US_Select_Designer_Strains.csv', data: us2 },
+      ];
+
+      datasets.forEach((dataset, idx) => {
+        // Delay execution linearly to inhibit browser pop-up intervention
+        setTimeout(() => {
+          const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
+          const csvRows = [
+            headers.join(','),
+            ...dataset.data.map((row: any) =>
+              [
+                `"${String(row.EAN).replace(/"/g, '""')}"`,
+                `"${row.BRAND.replace(/"/g, '""')}"`,
+                `"${row.STATUS.replace(/"/g, '""')}"`,
+                `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
+                row['READY QTYS'],
+                row['PRICE EUR'],
+                row['PRICE USD'],
+                typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
+              ].join(',')
+            )
+          ];
+
+          const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
+          const encodedUri = encodeURI(csvContent);
+          const link = document.createElement('a');
+          link.setAttribute('href', encodedUri);
+          link.setAttribute('download', dataset.name);
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          // Final record hook
+          if (idx === datasets.length - 1) {
+            setIsDownloading(false);
+          }
+        }, idx * 450);
+      });
+    } catch (error) {
+      console.error('Execution stack failure on dynamic JSON deserialization', error);
+      setIsDownloading(false);
+    }
   };
 
   return (
@@ -107,12 +130,21 @@ export default function Navbar() {
             </Link>
           ))}
           <button
+            id="btn-ordering-info-desktop"
+            onClick={() => setIsOrderingModalOpen(true)}
+            className="text-[11px] uppercase tracking-widest font-bold transition-colors duration-300 text-slate-300 hover:text-white flex items-center gap-1.5 cursor-pointer border-none bg-transparent"
+          >
+            <Info size={13} className="text-primary" />
+            Ordering Info
+          </button>
+          <button
             id="btn-download-all-desktop"
             onClick={downloadAllCatalogs}
-            className="px-6 py-2.5 rounded-sm bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] uppercase tracking-widest font-bold shadow-lg shadow-emerald-600/20 transition-all flex items-center gap-2"
+            disabled={isDownloading}
+            className="px-6 py-2.5 rounded-sm bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] uppercase tracking-widest font-bold shadow-lg shadow-emerald-600/20 transition-all flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <Download size={13} />
-            Catalog Download
+            {isDownloading ? <Loader2 size={13} className="animate-spin" /> : <Download size={13} />}
+            {isDownloading ? 'Processing...' : 'Catalog Download'}
           </button>
         </nav>
 
@@ -141,22 +173,38 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="pt-4">
+            <div className="pt-4 flex flex-col space-y-3">
+              <button
+                id="btn-ordering-info-mobile"
+                onClick={() => {
+                  setIsOrderingModalOpen(true);
+                  setIsOpen(false);
+                }}
+                className="w-full px-6 py-3 rounded-sm bg-dark/80 text-slate-300 hover:text-white text-center text-xs uppercase tracking-widest font-bold hover:bg-dark/90 transition-all border border-slate-700 flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Info size={15} className="text-primary" />
+                Ordering Info
+              </button>
               <button
                 id="btn-download-all-mobile"
                 onClick={() => {
                   downloadAllCatalogs();
                   setIsOpen(false);
                 }}
-                className="w-full px-6 py-4 rounded-sm bg-emerald-600 text-white text-center text-xs uppercase tracking-widest font-bold hover:bg-emerald-500 transition-all flex items-center justify-center gap-2"
+                disabled={isDownloading}
+                className="w-full px-6 py-4 rounded-sm bg-emerald-600 text-white text-center text-xs uppercase tracking-widest font-bold hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <Download size={15} />
-                Catalog Download
+                {isDownloading ? <Loader2 size={15} className="animate-spin" /> : <Download size={15} />}
+                {isDownloading ? 'Processing Batch...' : 'Catalog Download'}
               </button>
             </div>
           </motion.nav>
         )}
       </AnimatePresence>
+      <OrderingInformationModal 
+        isOpen={isOrderingModalOpen} 
+        onClose={() => setIsOrderingModalOpen(false)} 
+      />
     </header>
   );
 }
