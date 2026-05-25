@@ -100,7 +100,7 @@ export default function About() {
   ];
 
   return (
-    <div className="bg-slate-50 pt-24 overflow-x-hidden">
+    <div className="bg-white pt-24 overflow-x-hidden">
       {/* Hero Section */}
       <section className="py-24 px-4 md:px-8 text-center max-w-5xl mx-auto relative">
         <motion.div
@@ -194,7 +194,7 @@ export default function About() {
       </section>
 
       {/* Why Work With Us */}
-      <section className="py-32 px-4 bg-slate-50 border-y border-slate-200">
+      <section className="py-32 px-4 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
@@ -214,7 +214,7 @@ export default function About() {
                 variants={itemVariants}
                 className="p-10 bg-white border border-slate-200 rounded-2xl hover:shadow-xl transition-all group"
               >
-                <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   <benefit.icon size={24} />
                 </div>
                 <h4 className="text-lg font-bold text-dark mb-3">{benefit.title}</h4>

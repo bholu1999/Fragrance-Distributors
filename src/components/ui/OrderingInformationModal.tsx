@@ -44,7 +44,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
             className="relative bg-white text-slate-900 w-full max-w-6xl h-[90vh] flex flex-col rounded-xl shadow-2xl overflow-hidden border border-slate-200"
           >
             {/* Modal Header */}
-            <header className="sticky top-0 z-10 bg-dark text-white p-5 md:p-6 flex justify-between items-center border-b border-white/10">
+            <header className="sticky top-0 z-10 bg-white text-dark border-slate-200 p-5 md:p-6 flex justify-between items-center border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-primary/20 text-primary border border-primary/20">
                   <Info size={24} />
@@ -64,7 +64,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
             </header>
 
             {/* Modal Content - Scrollable Grid */}
-            <div className="flex-1 overflow-y-auto custom-scrollbar bg-slate-50">
+            <div className="flex-1 overflow-y-auto custom-scrollbar bg-white">
               {/* Top Notification Banner */}
               <div className="bg-emerald-50 border-b border-emerald-100 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div className="flex items-center gap-3 text-emerald-800 text-sm font-medium">

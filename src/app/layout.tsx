@@ -1,6 +1,7 @@
 import './globals.css';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import PaymentInfo from '../components/layout/PaymentInfo';
 
 export const metadata = {
   title: 'Fragrance Distributor',
@@ -20,6 +21,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <PaymentInfo />
         <Footer />
       </body>
     </html>

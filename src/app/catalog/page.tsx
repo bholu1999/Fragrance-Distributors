@@ -304,7 +304,7 @@ export default function Catalog() {
   };
 
   return (
-    <div className="bg-slate-50 pt-24 min-h-screen">
+    <div className="bg-white pt-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-16">
 
         {/* Header Section */}
@@ -519,7 +519,7 @@ export default function Catalog() {
               </div>
 
               {/* KPI Summary Strip inside Spreadsheet */}
-              <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-white px-6 py-4 border-b border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-white p-3 rounded-lg border border-slate-200/60 shadow-sm flex items-center gap-3">
                   <div className="p-2 bg-slate-100 rounded-md text-slate-600"><Database size={15} /></div>
                   <div>
@@ -555,7 +555,7 @@ export default function Catalog() {
               </div>
 
               {/* Excel Address/Formula Bar */}
-              <div className="bg-slate-50 border-b border-slate-200 px-6 py-2 flex items-center gap-2 font-mono text-[11px] text-slate-600 select-none">
+              <div className="bg-white border-b border-slate-200 px-6 py-2 flex items-center gap-2 font-mono text-[11px] text-slate-600 select-none">
                 <div className="bg-white px-2.5 py-1 border border-slate-200 rounded font-bold text-emerald-600 w-16 text-center shadow-sm">
                   {selectedCell ? `${selectedCell.colName}${selectedCell.row}` : 'A1'}
                 </div>
@@ -731,7 +731,7 @@ export default function Catalog() {
 
               {/* Paginated Load More Section */}
               {!isLoadingData && filteredAndSortedRecords.length > visibleRowsCount && (
-                <div className="bg-slate-50 border-t border-slate-200 px-6 py-3 flex justify-between items-center shrink-0">
+                <div className="bg-white border-t border-slate-200 px-6 py-3 flex justify-between items-center shrink-0">
                   <span className="text-[10px] text-slate-500 font-sans font-light">
                     Showing <span className="font-semibold text-slate-800">{visibleRowsCount}</span> of{' '}
                     <span className="font-semibold text-slate-800">{filteredAndSortedRecords.length}</span> rows
