@@ -9,12 +9,12 @@ export default function PrivacyPolicy() {
         </h1>
         <div className="prose prose-slate max-w-none text-slate-600 space-y-6">
           <p>
-            This Privacy Policy outlines how Perfumedistri collects, uses, discloses, and protects your personal information when you engage in wholesale transactions with us. Protecting your privacy and ensuring the security of your personal data is of utmost importance to us. By using Perfumedistri's services and providing your information, you agree to the practices described in this Privacy Policy.
+            This Privacy Policy outlines how Fragrance Distributors EU collects, uses, discloses, and protects your personal information when you engage in wholesale transactions with us. Protecting your privacy and ensuring the security of your personal data is of utmost importance to us. By using Fragrance Distributors EU's services and providing your information, you agree to the practices described in this Privacy Policy.
           </p>
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">Information We Collect</h3>
           <ol className="list-decimal pl-5 space-y-2">
-            <li><strong>Personal Information:</strong> When you engage in wholesale transactions with Perfumedistri, we may collect personal information such as your name, business name, contact information (email address, phone number, address), and payment details.</li>
+            <li><strong>Personal Information:</strong> When you engage in wholesale transactions with Fragrance Distributors EU, we may collect personal information such as your name, business name, contact information (email address, phone number, address), and payment details.</li>
             <li><strong>Order Information:</strong> We collect information related to your wholesale orders, including order details, product selections, and order history.</li>
           </ol>
 
@@ -56,10 +56,10 @@ export default function PrivacyPolicy() {
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">Contact Us</h3>
           <p>
-            If you have any questions, concerns, or requests regarding your personal information or this Privacy Policy, please contact Perfumedistri's Data Privacy Officer at <strong>hello@perfumedistri.com</strong>.
+            If you have any questions, concerns, or requests regarding your personal information or this Privacy Policy, please contact Fragrance Distributors EU's Data Privacy Officer at <strong>hello@Fragrance Distributors EU.com</strong>.
           </p>
           <p className="mt-4">
-            By engaging in wholesale transactions with Perfumedistri, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy. If you do not agree with any part of this policy, please refrain from using Perfumedistri's services.
+            By engaging in wholesale transactions with Fragrance Distributors EU, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy. If you do not agree with any part of this policy, please refrain from using Fragrance Distributors EU's services.
           </p>
         </div>
       </section>
