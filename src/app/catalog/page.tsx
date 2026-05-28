@@ -32,91 +32,113 @@ interface CatalogRecord {
 // Static metadata for EU Stock Catalogs (Lazy loaded to prevent bloating page load)
 const sheetsMetadata = [
   {
-    id: 'eu_1',
-    fileName: 'eu_1.json',
-    title: 'EU Distribution Hub Alpha',
-    description: 'Large-scale assortment across designer and prestige staples, featuring high availability for regional distribution.',
-    tag: 'EU Stock 1',
+    id: 'symphonya',
+    fileName: 'wholesale_stock_list.json',
+    title: 'Wholesale Stock List',
+    description: 'Comprehensive digital catalog containing over 29,000 top-tier wholesale brand items dynamically synchronized from Symphonya.',
+    tag: 'Wholesale Stock List',
+    colorClass: 'teal',
+    rowCount: 29123,
+    sizeEstimate: '7.8 MB',
+    readyQty: 606680,
+    topBrands: 'MILK SHAKE, SHISEIDO, CHRISTIAN DIOR, DIEGO DALLA PALMA, PAYOT, GUESS, ELIZABETH ARDEN, GOSH...',
+    iconBg: 'bg-teal-500/10',
+    iconColor: 'text-teal-500',
+    borderColor: 'border-teal-500/20',
+    accentGradient: 'from-teal-500/20 to-emerald-500/10',
+    btnColor: 'bg-teal-600 hover:bg-teal-500 shadow-teal-600/20',
+    preview: [
+      { EAN: '09472714', BRAND: 'OPI', DESCRIPTION: 'Opi, Nail Lacquer, Nail P...' },
+      { EAN: '4021609004349', BRAND: 'GOLDWELL', DESCRIPTION: 'Goldwell, TopChic, Perman...' },
+      { EAN: '8032274060093', BRAND: 'MILK SHAKE', DESCRIPTION: 'Milk Shake, Sensorial Min...' }
+    ]
+  },
+  {
+    id: 'belgium',
+    fileName: 'Belgium.json',
+    title: 'Belgium Inventory Stock',
+    description: 'Flagship European catalog assortment with over 55,000 distinct SKU records ready for continental distribution.',
+    tag: 'Belgium Inventory Stock',
     colorClass: 'emerald',
-    rowCount: 3102,
-    sizeEstimate: '718.7 KB',
-    readyQty: 1116720,
-    topBrands: 'Ajmal, Antonio Banderas, Aramis, Azzaro, Benefit...',
+    rowCount: 56619,
+    sizeEstimate: '13.7 MB',
+    readyQty: 3164622,
+    topBrands: 'Lattafa, Wella, EUROSTIL, Chanel, Guerlain, Al, La...',
     iconBg: 'bg-emerald-500/10',
     iconColor: 'text-emerald-500',
     borderColor: 'border-emerald-500/20',
     accentGradient: 'from-emerald-500/20 to-teal-500/10',
     btnColor: 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/20',
     preview: [
-      { BRAND: 'Ajmal', DESCRIPTION: 'Shadow 75Ml' },
-      { BRAND: 'Ajmal', DESCRIPTION: 'Entice 75Ml' },
-      { BRAND: 'Ajmal', DESCRIPTION: 'Blu Edp 90Ml' }
+      { EAN: '8411047136133', BRAND: 'Aire', DESCRIPTION: 'Aire De Sevilla Divina Ea...' },
+      { EAN: '8411047136218', BRAND: 'Aire', DESCRIPTION: 'Aire De Sevilla Peonia Ea...' },
+      { EAN: '3145891475609', BRAND: 'Chanel', DESCRIPTION: 'Chanel Sublimage La Creme...' }
     ]
   },
   {
-    id: 'eu_2',
-    fileName: 'eu_2.json',
-    title: 'EU Boutique & Select Lines',
-    description: 'Handpicked boutique scents and exclusive regional exclusives including high-demand niche cosmetics.',
-    tag: 'EU Stock 2',
+    id: 'netherlands',
+    fileName: 'Netherlands.json',
+    title: 'Netherlands Inventory Stock',
+    description: 'High-velocity select stock portfolio covering premium designers and curated hair cosmetics.',
+    tag: 'Netherlands Inventory Stock',
     colorClass: 'indigo',
-    rowCount: 383,
-    sizeEstimate: '105.9 KB',
-    readyQty: 14194,
-    topBrands: 'Acqua di Parma, Agatha Paris, Bobbi Brown, Burberry...',
+    rowCount: 7267,
+    sizeEstimate: '1.8 MB',
+    readyQty: 827180,
+    topBrands: 'Louis Cardin, Creed, Revlon, The Olphactory, Floris, Lattafa...',
     iconBg: 'bg-indigo-500/10',
     iconColor: 'text-indigo-500',
     borderColor: 'border-indigo-500/20',
     accentGradient: 'from-indigo-500/20 to-blue-500/10',
     btnColor: 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/20',
     preview: [
-      { BRAND: 'Acqua di Parma', DESCRIPTION: 'Set Signatures Of The Sun...' },
-      { BRAND: 'Acqua di Parma', DESCRIPTION: 'Set Colonia Futura...' },
-      { BRAND: 'Acqua di Parma', DESCRIPTION: 'Magia Del Camino Aroma...' }
+      { EAN: '3760263370537', BRAND: '100 Bon', DESCRIPTION: '100 Bon Carvi & Jardin De...' },
+      { EAN: '3760263370551', BRAND: '100 Bon', DESCRIPTION: '100 Bon Nagaranga & Santa...' },
+      { EAN: '3760263370513', BRAND: '100 Bon', DESCRIPTION: '100 Bon Bergamote & Rose ...' }
     ]
   },
   {
-    id: 'eu_3',
-    fileName: 'eu_3.json',
-    title: 'Main EU Megastore Inventory',
-    description: 'Our flagship catalog with over 25,000 distinct SKU records covering globally recognized designer houses.',
-    tag: 'EU Stock 3',
+    id: 'romania',
+    fileName: 'Romania.json',
+    title: 'Romania Inventory Stock',
+    description: 'Extensive regional stock feed serving Eastern Europe with prime designer houses and cosmetics.',
+    tag: 'Romania Inventory Stock',
     colorClass: 'amber',
-    rowCount: 25782,
-    sizeEstimate: '7.1 MB',
-    readyQty: 710823,
-    topBrands: '4711, 100 Bon, 111 Skin, Abercrombie & Fitch...',
+    rowCount: 27139,
+    sizeEstimate: '7.3 MB',
+    readyQty: 714421,
+    topBrands: 'Milk Shake, Shiseido, Christian Dior, Diego Dalla Palma, Payot...',
     iconBg: 'bg-amber-500/10',
     iconColor: 'text-amber-500',
     borderColor: 'border-amber-500/20',
     accentGradient: 'from-amber-500/20 to-yellow-500/10',
     btnColor: 'bg-amber-600 hover:bg-amber-500 shadow-amber-600/20',
     preview: [
-      { BRAND: '4711', DESCRIPTION: 'Set Acqua Colonia Lychee...' },
-      { BRAND: '4711', DESCRIPTION: 'Set Acqua Colonia White...' },
-      { BRAND: '4711', DESCRIPTION: 'Set Acqua Colonia Lemon...' }
+      { EAN: '4011700747771', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' },
+      { EAN: '4011700747689', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia W...' },
+      { EAN: '4011700747856', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' }
     ]
   },
   {
-    id: 'eu_4',
-    fileName: 'eu_4.json',
-    title: 'Premium EU Designer Reserve',
-    description: 'Exclusive high-velocity designer catalogs tailored for high-volume retail and large distributors.',
-    tag: 'EU Stock 4',
+    id: 'spain',
+    fileName: 'Spain.json',
+    title: 'Spain Inventory Stock',
+    description: 'Comprehensive Mediterranean regional logistics stock with top-tier premium fragrance lines.',
+    tag: 'Spain Inventory Stock',
     colorClass: 'rose',
-    rowCount: 7032,
-    sizeEstimate: '1.8 MB',
-    readyQty: 832221,
-    topBrands: '100 Bon, 3Lab, 4711, Abercrombie & Fitch...',
+    rowCount: 27209,
+    sizeEstimate: '7.3 MB',
+    readyQty: 716493,
+    topBrands: 'Milk Shake, Shiseido, Christian Dior, Diego Dalla Palma, Payot...',
     iconBg: 'bg-rose-500/10',
     iconColor: 'text-rose-500',
     borderColor: 'border-rose-500/20',
     accentGradient: 'from-rose-500/20 to-pink-500/10',
     btnColor: 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20',
     preview: [
-      { BRAND: '100 Bon', DESCRIPTION: 'Carvi & Jardin De Figuier...' },
-      { BRAND: '100 Bon', DESCRIPTION: 'Nagaranga & Santal Citronn...' },
-      { BRAND: '100 Bon', DESCRIPTION: 'Bergamote & Rose Sauvage...' }
+      { EAN: '4011700747771', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' },
+      { EAN: '4011700747689', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia W...' },
+      { EAN: '4011700747856', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' }
     ]
   }
 ];
@@ -144,23 +166,29 @@ export default function Catalog() {
   }, [activeSheetId]);
 
   // Dynamically import JSON chunks on-demand to keep bundle sizes highly optimized
-  const loadSheetData = async (id: string) => {
-    if (loadedData[id]) return loadedData[id];
-    
+  const loadSheetData = async (id: string, forceFresh = false) => {
+    if (loadedData[id] && !forceFresh) return loadedData[id];
+
     setIsLoadingData(true);
     try {
       let data;
-      // Using Webpack Dynamic Imports to stream data chunks only when requested
-      if (id === 'eu_1') {
-        data = (await import('../../data/eu_1.json')).default;
-      } else if (id === 'eu_2') {
-        data = (await import('../../data/eu_2.json')).default;
-      } else if (id === 'eu_3') {
-        data = (await import('../../data/eu_3.json')).default;
-      } else if (id === 'eu_4') {
-        data = (await import('../../data/eu_4.json')).default;
+      if (id === 'symphonya') {
+        const response = await fetch('/api/stock');
+        if (!response.ok) throw new Error('API fetch failed');
+        data = await response.json();
+      } else {
+        // Using Webpack Dynamic Imports to stream data chunks only when requested
+        if (id === 'belgium') {
+          data = (await import('../../data/Belgium.json')).default;
+        } else if (id === 'netherlands') {
+          data = (await import('../../data/Netherlands.json')).default;
+        } else if (id === 'romania') {
+          data = (await import('../../data/Romania.json')).default;
+        } else if (id === 'spain') {
+          data = (await import('../../data/Spain.json')).default;
+        }
       }
-      
+
       const typedData = data as CatalogRecord[];
       setLoadedData(prev => ({ ...prev, [id]: typedData }));
       return typedData;
@@ -179,7 +207,7 @@ export default function Catalog() {
     setSelectedCell(null);
     setVisibleRowsCount(50);
     setModalOpen(true);
-    await loadSheetData(id);
+    await loadSheetData(id, id === 'symphonya');
   };
 
   // Switch tabs inside the modal
@@ -189,19 +217,19 @@ export default function Catalog() {
     setSortField(null);
     setSelectedCell(null);
     setVisibleRowsCount(50);
-    await loadSheetData(id);
+    await loadSheetData(id, id === 'symphonya');
   };
 
   // Calculate dynamic stats for the active dataset
   const activeStats = useMemo(() => {
     if (!activeSheet) return { totalSkus: 0, totalStock: 0, avgPriceEur: 0, distinctBrands: 0 };
-    
+
     const items = loadedData[activeSheet.id] || [];
-    
+
     // Core stats are immediate from static metadata, pricing requires loaded dataset
     const totalSkus = activeSheet.rowCount;
     const totalStock = activeSheet.readyQty;
-    
+
     let avgPriceEur = 0;
     let distinctBrands = 0;
 
@@ -275,7 +303,7 @@ export default function Catalog() {
   const exportToCSV = () => {
     const data = loadedData[activeSheet.id] || [];
     if (data.length === 0) return;
-    
+
     const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
     const csvRows = [
       headers.join(','), // Header row
@@ -325,8 +353,8 @@ export default function Catalog() {
           </p>
         </div>
 
-        {/* 4 Excel Skeleton Cards Grid - Optimized 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* 3 Excel Skeleton Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {sheetsMetadata.map((sheet, index) => {
             return (
               <motion.div
@@ -370,14 +398,16 @@ export default function Catalog() {
                         <div key={rowIdx} className="flex items-center text-[9px] font-mono text-slate-500">
                           <div className="w-1/12 text-center border-r border-slate-100 text-[8px] text-slate-400 font-bold pr-1">{rowIdx + 1}</div>
                           <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <div className="h-2 w-11/12 bg-slate-200 rounded animate-pulse" />
+                            <span className="font-bold text-[8px] text-black max-w-full truncate font-mono">
+                              {row.EAN}
+                            </span>
                           </div>
                           <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <span className="font-semibold text-[8px] text-slate-600 max-w-full truncate">
+                            <span className="font-bold text-[8px] text-black max-w-full truncate">
                               {row.BRAND}
                             </span>
                           </div>
-                          <div className="w-5/12 px-1 truncate text-[8px] text-slate-400">
+                          <div className="w-5/12 px-1 truncate text-[8px] text-black font-bold">
                             {row.DESCRIPTION}
                           </div>
                         </div>
@@ -508,8 +538,8 @@ export default function Catalog() {
                     key={sheet.id}
                     onClick={() => switchSheetInModal(sheet.id)}
                     className={`px-4 py-2.5 text-xs font-sans font-bold flex items-center gap-2 border-b-2 transition-all shrink-0 ${activeSheetId === sheet.id
-                        ? 'border-emerald-600 bg-white text-emerald-600 font-extrabold'
-                        : 'border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
+                      ? 'border-emerald-600 bg-white text-emerald-600 font-extrabold'
+                      : 'border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
                       }`}
                   >
                     <Layers size={12} />
@@ -655,7 +685,7 @@ export default function Catalog() {
                           {/* EAN Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'A', row.EAN)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-mono select-text truncate ${isEanSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-mono select-text truncate text-black font-bold ${isEanSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
                               }`}
                           >
                             {row.EAN}
@@ -664,7 +694,7 @@ export default function Catalog() {
                           {/* Brand Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'B', row.BRAND)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-semibold truncate ${isBrandSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-bold truncate text-black ${isBrandSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
                               }`}
                           >
                             {row.BRAND}
@@ -673,7 +703,7 @@ export default function Catalog() {
                           {/* Description Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'C', row.DESCRIPTION)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-slate-600 font-light truncate ${isDescSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-black font-bold truncate ${isDescSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
                               }`}
                           >
                             {row.DESCRIPTION}
@@ -682,8 +712,7 @@ export default function Catalog() {
                           {/* Quantity Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'D', row['READY QTYS'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold ${Number(row['READY QTYS']) < 10 ? 'text-amber-600' : 'text-slate-700'
-                              } ${isQtySelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''}`}
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold text-black ${isQtySelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''}`}
                           >
                             {Number(row['READY QTYS']).toLocaleString()}
                           </td>
@@ -691,7 +720,7 @@ export default function Catalog() {
                           {/* Price EUR Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'E', row['PRICE EUR'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-emerald-600 font-semibold ${isEurSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-black font-bold ${isEurSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
                               }`}
                           >
                             €{Number(row['PRICE EUR']).toFixed(2)}
@@ -700,7 +729,7 @@ export default function Catalog() {
                           {/* Price USD Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'F', row['PRICE USD'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isUsdSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-black font-bold ${isUsdSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
                               }`}
                           >
                             ${Number(row['PRICE USD']).toFixed(2)}
@@ -709,7 +738,7 @@ export default function Catalog() {
                           {/* Price GBP Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'G', row['PRICE GBP'])}
-                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isGbpSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
+                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-black font-bold ${isGbpSelected ? 'outline outline-2 outline-emerald-600 bg-emerald-50/30' : ''
                               }`}
                           >
                             {typeof row['PRICE GBP'] === 'number' ? `£${row['PRICE GBP'].toFixed(2)}` : row['PRICE GBP']}

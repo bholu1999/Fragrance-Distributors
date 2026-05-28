@@ -32,47 +32,69 @@ interface CatalogRecord {
 // Static metadata for US Stock Catalogs (Lazy loaded)
 const sheetsMetadata = [
   {
-    id: 'us_1',
-    fileName: 'us_1.json',
-    title: 'US Domestic Main Stock',
-    description: 'Fast-moving wholesale domestic stock ready for immediate nationwide delivery across the United States.',
-    tag: 'US Stock 1',
+    id: 'california',
+    fileName: 'California.json',
+    title: 'USA Inventory (Ex.W California)',
+    description: 'Fast-moving wholesale domestic stock ready for West Coast and nationwide distribution.',
+    tag: 'USA Inventory Stock',
     colorClass: 'sky',
-    rowCount: 1183,
-    sizeEstimate: '285.7 KB',
-    readyQty: 206453,
-    topBrands: '4711, Adidas, Afnan, Ahsan, Al Haramain, Al Rehab...',
+    rowCount: 873,
+    sizeEstimate: '0.2 MB',
+    readyQty: 0,
+    topBrands: 'LATTAFA, DUMONT, MAISON, AFNAN, ARMAF, AHMED, RASASI, D&G...',
     iconBg: 'bg-sky-500/10',
     iconColor: 'text-sky-500',
     borderColor: 'border-sky-500/20',
     accentGradient: 'from-sky-500/20 to-blue-500/10',
     btnColor: 'bg-sky-600 hover:bg-sky-500 shadow-sky-600/20',
     preview: [
-      { BRAND: '4711', DESCRIPTION: '4711 10.1 OZ EDC SPLASH' },
-      { BRAND: '4711', DESCRIPTION: '4711 13.5 OZ EDC SPLASH' },
-      { BRAND: '4711', DESCRIPTION: '4711 27.1 OZ EDC SPLASH' }
+      { EAN: '6290171072607', BRAND: 'AFNAN', DESCRIPTION: 'AFNAN - 9PM FEMME 3.4 EDP...' },
+      { EAN: '6290171072591', BRAND: 'AFNAN', DESCRIPTION: 'AFNAN - 9AM FEMME 3.4 EDP...' },
+      { EAN: '6290171002215', BRAND: 'AFNAN', DESCRIPTION: 'AFNAN - HER HIGHNESS V BL...' }
     ]
   },
   {
-    id: 'us_2',
-    fileName: 'us_2.json',
-    title: 'US Select Designer Strains',
-    description: 'Premium high-prestige and niche boutique stock portfolios catering to high-end US retail networks.',
-    tag: 'US Stock 2',
+    id: 'new_jersey',
+    fileName: 'New_Jersey.json',
+    title: 'USA Inventory (Ex.W FOB New Jersey)',
+    description: 'Extensive regional stock feed serving the Tri-State area with premium designer fragrances.',
+    tag: 'USA Inventory Stock',
     colorClass: 'violet',
-    rowCount: 1530,
-    sizeEstimate: '372.6 KB',
-    readyQty: 87357,
-    topBrands: '273, 4711, Abercrombie, Acqua, Afnan, Ajmal...',
+    rowCount: 1229,
+    sizeEstimate: '0.3 MB',
+    readyQty: 234101,
+    topBrands: 'LATTAFA, VERSACE, RASASI, Z.ALTERNATIVE DESIGNER, DISNEY, CUBA...',
     iconBg: 'bg-violet-500/10',
     iconColor: 'text-violet-500',
     borderColor: 'border-violet-500/20',
     accentGradient: 'from-violet-500/20 to-purple-500/10',
     btnColor: 'bg-violet-600 hover:bg-violet-500 shadow-violet-600/20',
     preview: [
-      { BRAND: '273', DESCRIPTION: '273 L 2.5 EDP SPR' },
-      { BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA BLOOD...' },
-      { BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA BLOOD...' }
+      { EAN: '4011700740055', BRAND: '4711', DESCRIPTION: '4711 10.1 OZ EDC SPLASH' },
+      { EAN: '4011700740048', BRAND: '4711', DESCRIPTION: '4711 13.5 OZ EDC SPLASH' },
+      { EAN: '4011700740031', BRAND: '4711', DESCRIPTION: '4711 27.1 OZ EDC SPLASH' }
+    ]
+  },
+  {
+    id: 'new_york',
+    fileName: 'New_York.json',
+    title: 'USA Inventory (FOB New York)',
+    description: 'High-velocity select stock portfolio covering prestige brands and major wholesale lines.',
+    tag: 'USA Inventory Stock',
+    colorClass: 'rose',
+    rowCount: 4468,
+    sizeEstimate: '1.1 MB',
+    readyQty: 239231,
+    topBrands: 'LATTAFA, AL, ARMAF, TST, KHADLAJ, ARD, SALERM, MONTALE...',
+    iconBg: 'bg-rose-500/10',
+    iconColor: 'text-rose-500',
+    borderColor: 'border-rose-500/20',
+    accentGradient: 'from-rose-500/20 to-pink-500/10',
+    btnColor: 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20',
+    preview: [
+      { EAN: '837015000493', BRAND: '273', DESCRIPTION: '273 L 2.5 EDP SPR' },
+      { EAN: '4011700748709', BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA BLOOD ...' },
+      { EAN: '4011700750368', BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA INTENS...' }
     ]
   }
 ];
@@ -102,16 +124,18 @@ export default function UsCatalog() {
   // Dynamically import JSON chunks
   const loadSheetData = async (id: string) => {
     if (loadedData[id]) return loadedData[id];
-    
+
     setIsLoadingData(true);
     try {
       let data;
-      if (id === 'us_1') {
-        data = (await import('../../data/us_1.json')).default;
-      } else if (id === 'us_2') {
-        data = (await import('../../data/us_2.json')).default;
+      if (id === 'california') {
+        data = (await import('../../data/California.json')).default;
+      } else if (id === 'new_jersey') {
+        data = (await import('../../data/New_Jersey.json')).default;
+      } else if (id === 'new_york') {
+        data = (await import('../../data/New_York.json')).default;
       }
-      
+
       const typedData = data as CatalogRecord[];
       setLoadedData(prev => ({ ...prev, [id]: typedData }));
       return typedData;
@@ -146,11 +170,11 @@ export default function UsCatalog() {
   // Calculate dynamic stats for the active dataset
   const activeStats = useMemo(() => {
     if (!activeSheet) return { totalSkus: 0, totalStock: 0, avgPriceUsd: 0, distinctBrands: 0 };
-    
+
     const items = loadedData[activeSheet.id] || [];
     const totalSkus = activeSheet.rowCount;
     const totalStock = activeSheet.readyQty;
-    
+
     let avgPriceUsd = 0;
     let distinctBrands = 0;
 
@@ -218,7 +242,7 @@ export default function UsCatalog() {
   const exportToCSV = () => {
     const data = loadedData[activeSheet.id] || [];
     if (data.length === 0) return;
-    
+
     const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
     const csvRows = [
       headers.join(','),
@@ -268,8 +292,8 @@ export default function UsCatalog() {
           </p>
         </div>
 
-        {/* 2 Excel Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+        {/* 3 Excel Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
           {sheetsMetadata.map((sheet, index) => {
             return (
               <motion.div
@@ -310,14 +334,16 @@ export default function UsCatalog() {
                         <div key={rowIdx} className="flex items-center text-[9px] font-mono text-slate-500">
                           <div className="w-1/12 text-center border-r border-slate-100 text-[8px] text-slate-400 font-bold pr-1">{rowIdx + 1}</div>
                           <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <div className="h-2 w-11/12 bg-slate-200 rounded animate-pulse" />
+                            <span className="font-bold text-[8px] text-black max-w-full truncate font-mono">
+                              {row.EAN}
+                            </span>
                           </div>
                           <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <span className="font-semibold text-[8px] text-slate-600 max-w-full truncate">
+                            <span className="font-bold text-[8px] text-black max-w-full truncate">
                               {row.BRAND}
                             </span>
                           </div>
-                          <div className="w-5/12 px-1 truncate text-[8px] text-slate-400">
+                          <div className="w-5/12 px-1 truncate text-[8px] text-black font-bold">
                             {row.DESCRIPTION}
                           </div>
                         </div>
@@ -441,8 +467,8 @@ export default function UsCatalog() {
                     key={sheet.id}
                     onClick={() => switchSheetInModal(sheet.id)}
                     className={`px-4 py-2.5 text-xs font-sans font-bold flex items-center gap-2 border-b-2 transition-all shrink-0 ${activeSheetId === sheet.id
-                        ? 'border-sky-600 bg-white text-sky-600 font-extrabold'
-                        : 'border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
+                      ? 'border-sky-600 bg-white text-sky-600 font-extrabold'
+                      : 'border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
                       }`}
                   >
                     <Layers size={12} />
@@ -591,7 +617,7 @@ export default function UsCatalog() {
 
                           <td
                             onClick={() => handleCellClick(index, 'B', row.BRAND)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-semibold truncate ${isBrandSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-bold truncate text-black ${isBrandSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {row.BRAND}
@@ -599,39 +625,42 @@ export default function UsCatalog() {
 
                           <td
                             onClick={() => handleCellClick(index, 'C', row.DESCRIPTION)}
-                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-slate-600 font-light truncate ${isDescSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 cursor-pointer font-sans text-black font-bold truncate ${isDescSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {row.DESCRIPTION}
                           </td>
 
+                          {/* Quantity Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'D', row['READY QTYS'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold ${Number(row['READY QTYS']) < 10 ? 'text-amber-600' : 'text-slate-700'
-                              } ${isQtySelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''}`}
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono font-bold text-black ${isQtySelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''}`}
                           >
                             {Number(row['READY QTYS']).toLocaleString()}
                           </td>
 
+                          {/* Price EUR Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'E', row['PRICE EUR'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isEurSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-black font-bold ${isEurSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             €{Number(row['PRICE EUR']).toFixed(2)}
                           </td>
 
+                          {/* Price USD Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'F', row['PRICE USD'])}
-                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-sky-600 font-semibold ${isUsdSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
+                            className={`border-r border-slate-150 px-3 py-1.5 text-right cursor-pointer font-mono text-black font-bold ${isUsdSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             ${Number(row['PRICE USD']).toFixed(2)}
                           </td>
 
+                          {/* Price GBP Cell */}
                           <td
                             onClick={() => handleCellClick(index, 'G', row['PRICE GBP'])}
-                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-slate-600 ${isGbpSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
+                            className={`px-3 py-1.5 text-right cursor-pointer font-mono text-black font-bold ${isGbpSelected ? 'outline outline-2 outline-sky-600 bg-sky-50/30' : ''
                               }`}
                           >
                             {typeof row['PRICE GBP'] === 'number' ? `£${row['PRICE GBP'].toFixed(2)}` : row['PRICE GBP']}

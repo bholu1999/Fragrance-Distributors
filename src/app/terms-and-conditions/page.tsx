@@ -44,7 +44,7 @@ export default function TermsAndConditions() {
           </ul>
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">6. Minimum Order Quantity (MOQ)</h3>
-          <p>The minimum order quantity is <strong>€ 1000</strong>.</p>
+          <p>The minimum order quantity is <strong>€ 500</strong> for International and <strong>€ 99</strong> for Domestic Orders.</p>
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">7. Product Availability</h3>
           <p>
@@ -64,14 +64,13 @@ export default function TermsAndConditions() {
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">10. Governing Law</h3>
           <p>
-            This Agreement shall be governed by and construed in accordance with the laws of Belgium.
+            This Agreement shall be governed by and construed in accordance with the laws by Country of Origin of Ex.W/FOB. Romania, Netherlands, Belgium, Spain & USA.
           </p>
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">11. Our Company Information</h3>
           <address className="not-italic">
-            EnterCom BV<br />
-            Patersstraat 100<br />
-            2300 Turnhout
+            Calle Rellotge, 33 Santa Coloma De Gramenet
+            08923 Barcelona, Spain.
           </address>
         </div>
       </section>

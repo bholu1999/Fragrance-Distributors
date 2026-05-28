@@ -131,46 +131,32 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Right Images Column (Dynamic Stack) */}
+            {/* Right Images Column (Logo Display) */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
               className="relative w-full aspect-[4/3] lg:aspect-square flex items-center justify-center"
             >
               {/* Back ambient gold glow */}
-              <div className="absolute w-[300px] h-[300px] bg-secondary/15 rounded-full blur-[100px] pointer-events-none z-0" />
+              <div className="absolute w-[320px] h-[320px] bg-secondary/15 rounded-full blur-[100px] pointer-events-none z-0" />
 
-              {/* Main Luxury Bottle card */}
+              {/* Floating Luxury logo badge */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute z-20 w-3/4 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white p-3 rotate-[-3deg] hover:rotate-0 transition-transform duration-500"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative z-10 rounded-[2.5rem] bg-white border border-slate-200/80 shadow-2xl flex flex-col items-center justify-center max-w-sm w-full mx-auto"
               >
-                <div className="w-full h-full rounded-xl overflow-hidden relative bg-slate-50">
+                <div className="relative w-100 h-100 md:w-100 md:h-100 drop-shadow-md">
                   <img
-                    src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop"
-                    alt="Creed Perfume"
-                    className="w-full h-full object-cover"
+                    src="/logo.png"
+                    alt="Fragrance Distributors Logo"
+                    className="w-full h-full object-contain"
                   />
-                  <div className="absolute bottom-4 left-4 bg-dark/80 text-white text-[9px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full backdrop-blur-sm shadow-lg border border-white/10">
-                    Featured: Creed Aventus
-                  </div>
                 </div>
-              </motion.div>
-
-              {/* Overlapping secondary bottle card */}
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute z-10 right-2 bottom-0 w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white p-2.5 rotate-[6deg] hover:rotate-0 transition-transform duration-500"
-              >
-                <div className="w-full h-full rounded-xl overflow-hidden relative bg-slate-50">
-                  <img
-                    src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=600&auto=format&fit=crop"
-                    alt="Tom Ford Perfume"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold font-sans tracking-tight text-dark uppercase">Fragrance</h3>
+                  <p className="text-xs text-secondary font-bold tracking-[0.3em] uppercase mb-4">Distributors EU</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -262,32 +248,32 @@ export default function Home() {
                 name: 'Aventus Eau de Parfum',
                 image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600&auto=format&fit=crop',
                 size: '100ml',
-                qty: '142 Units',
-                price: '€215.00'
+                qty: '',
+                price: ''
               },
               {
                 brand: 'Tom Ford',
                 name: 'Oud Wood Eau de Parfum',
                 image: 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=600&auto=format&fit=crop',
                 size: '50ml',
-                qty: '87 Units',
-                price: '€165.00'
+                qty: '',
+                price: ''
               },
               {
                 brand: 'Byredo',
                 name: 'Bal d\'Afrique Eau de Parfum',
                 image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=600&auto=format&fit=crop',
                 size: '100ml',
-                qty: '54 Units',
-                price: '€145.00'
+                qty: '',
+                price: ''
               },
               {
                 brand: 'MFK',
                 name: 'Baccarat Rouge 540',
                 image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=600&auto=format&fit=crop',
                 size: '70ml',
-                qty: '39 Units',
-                price: '€230.00'
+                qty: '',
+                price: ''
               }
             ].map((item, idx) => (
               <motion.div
@@ -316,12 +302,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 text-[10px] text-slate-500 mb-4 font-mono">
                       <span>Size: {item.size}</span>
                       <span className="text-slate-300">|</span>
-                      <span>Stock: <strong className="text-secondary font-bold">{item.qty}</strong></span>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-slate-100 pt-4">
-                    <span className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Wholesale Price</span>
-                    <span className="text-sm font-bold text-dark font-mono">{item.price}</span>
                   </div>
                 </div>
               </motion.div>

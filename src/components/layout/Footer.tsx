@@ -47,9 +47,9 @@ export default function Footer() {
         <div>
           <h4 className="font-sans font-bold tracking-tight text-dark mb-6">Contact</h4>
           <address className="not-italic text-slate-500 text-sm space-y-2 leading-relaxed">
-            <p>128 Innovation Drive</p>
-            <p>Tech District, DX 75008</p>
-            <p className="pt-2 text-primary">sales@fragrancedistributors.com</p>
+            <p>Calle Rellotge, 33 Santa Coloma De Gramenet
+              08923 Barcelona, Spain.</p>
+            <p className="pt-2 text-primary">sales@fragrancedistributors.eu</p>
           </address>
         </div>
       </div>

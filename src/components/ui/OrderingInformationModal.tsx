@@ -44,7 +44,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
             className="relative bg-white text-slate-900 w-full max-w-6xl h-[90vh] flex flex-col rounded-xl shadow-2xl overflow-hidden border border-slate-200"
           >
             {/* Modal Header */}
-            <header className="sticky top-0 z-10 bg-white text-dark border-slate-200 p-5 md:p-6 flex justify-between items-center border-b border-white/10">
+            <header className="sticky top-0 z-10 bg-white text-dark border-slate-200 p-5 md:p-6 flex justify-between items-center border-b border-slate-200">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-primary/20 text-primary border border-primary/20">
                   <Info size={24} />
@@ -56,7 +56,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
               </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors text-slate-400 hover:text-white"
+                className="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-500 hover:text-dark"
                 aria-label="Close modal"
               >
                 <X size={24} />

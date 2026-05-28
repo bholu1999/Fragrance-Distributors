@@ -16,8 +16,8 @@ export default function PaymentInfo() {
 
   const bankDetails = {
     bankName: 'N26 Bank SE, Spanish Branch',
-    swift: 'N26DES21XXX',
-    iban: 'ES91 0182 9312 4820 0012 3456',
+    swift: '',
+    iban: '',
     address: 'Calle de Don Ramon de la Cruz, 84, 28006 Madrid, Spain',
   };
 
@@ -36,7 +36,7 @@ export default function PaymentInfo() {
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-slate-200/50 rounded-full filter blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header Block */}
         <div className="text-center md:text-left mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
@@ -51,7 +51,7 @@ export default function PaymentInfo() {
               Execute wire transfers directly to our primary European depository. Select any card credential to copy instantly.
             </p>
           </div>
-          
+
           <div className="flex items-center justify-center md:justify-end">
             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest bg-white px-3 py-1.5 border border-slate-200 rounded shadow-sm">
               Settlement Currency: EUR / USD
@@ -61,9 +61,9 @@ export default function PaymentInfo() {
 
         {/* 3-Column Responsive Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          
+
           {/* Card 1: Bank & Swift */}
-          <div 
+          <div
             onClick={() => copyToClipboard(bankDetails.swift, 'swift')}
             className="group relative bg-white border border-slate-200 hover:border-secondary p-6 rounded-lg transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md flex flex-col justify-between"
           >
@@ -95,7 +95,7 @@ export default function PaymentInfo() {
             {/* Copy Toast overlay inside the card */}
             <AnimatePresence>
               {copiedField === 'swift' && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -108,7 +108,7 @@ export default function PaymentInfo() {
           </div>
 
           {/* Card 2: IBAN Account */}
-          <div 
+          <div
             onClick={() => copyToClipboard(bankDetails.iban, 'iban')}
             className="group relative bg-white border border-slate-200 hover:border-secondary p-6 rounded-lg transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md flex flex-col justify-between"
           >
@@ -139,7 +139,7 @@ export default function PaymentInfo() {
             </div>
             <AnimatePresence>
               {copiedField === 'iban' && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -152,7 +152,7 @@ export default function PaymentInfo() {
           </div>
 
           {/* Card 3: Address Details */}
-          <div 
+          <div
             onClick={() => copyToClipboard(bankDetails.address, 'address')}
             className="group relative bg-white border border-slate-200 hover:border-secondary p-6 rounded-lg transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md flex flex-col justify-between"
           >
@@ -183,7 +183,7 @@ export default function PaymentInfo() {
             </div>
             <AnimatePresence>
               {copiedField === 'address' && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}

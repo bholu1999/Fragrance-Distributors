@@ -232,7 +232,7 @@ export default function About() {
           <span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em] mb-6 block">Get Started</span>
           <h2 className="font-sans font-bold tracking-tighter text-4xl md:text-5xl mb-10 text-dark leading-tight">Ready to transform your distribution?</h2>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <Link href="/register" className="w-full sm:w-auto px-10 py-4 bg-primary text-white text-[11px] uppercase tracking-widest font-bold rounded-sm shadow-lg shadow-primary/20 hover:scale-105 transition-all">
+            <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-primary text-white text-[11px] uppercase tracking-widest font-bold rounded-sm shadow-lg shadow-primary/20 hover:scale-105 transition-all">
               Join B2B Network
             </Link>
             <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-dark text-white text-[11px] uppercase tracking-widest font-bold rounded-sm hover:bg-slate-800 transition-all">

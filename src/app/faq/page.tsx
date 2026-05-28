@@ -54,7 +54,7 @@ export default function FAQ() {
           <div>
             <h3 className="text-lg font-bold text-dark mb-2">7. Is there a minimum order quantity (MOQ) for certain products?</h3>
             <p>
-              Yes, there is a minimum order quantity (MOQ) requirement of €1000. MOQ details will be specified at the time of order placement. Please consult with our sales team for product-specific MOQ information.
+              Yes, there is a minimum order quantity (MOQ) requirement of €500 for International and €99 for Domestic Orders. MOQ details will be specified at the time of order placement. Please consult with our sales team for product-specific MOQ information.
             </p>
           </div>
 

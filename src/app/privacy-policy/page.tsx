@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
 
           <h3 className="text-xl font-bold text-dark mt-8 mb-4">Contact Us</h3>
           <p>
-            If you have any questions, concerns, or requests regarding your personal information or this Privacy Policy, please contact Fragrance Distributors EU's Data Privacy Officer at <strong>hello@Fragrance Distributors EU.com</strong>.
+            If you have any questions, concerns, or requests regarding your personal information or this Privacy Policy, please contact Fragrance Distributors EU's Data Privacy Officer at <strong>sales@fragrancedistributors.eu</strong>
           </p>
           <p className="mt-4">
             By engaging in wholesale transactions with Fragrance Distributors EU, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy. If you do not agree with any part of this policy, please refrain from using Fragrance Distributors EU's services.
