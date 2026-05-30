@@ -104,6 +104,7 @@ export default function Contact() {
                       </h3>
                       <p>+34 (SPAIN)</p>
                       <p>+91 40 27500429 (INDIA)</p>
+                      <p>+01 212 461 0981 (USA)</p>
                     </div>
                   </div>
 
@@ -115,7 +116,7 @@ export default function Contact() {
                         WhatsApp
                       </h3>
                       <p>+356 9992 5903 (EU)</p>
-                      <p>+01 212 461 0981 (USA)</p>
+                      <p>+91 800 837 9102 (INDIA)</p>
                     </div>
                   </div>
                 </div>

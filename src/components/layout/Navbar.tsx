@@ -34,70 +34,75 @@ export default function Navbar() {
 
   const isTransparent = isHome && !scrolled;
 
-  // Dynamic async lazy-loading macro for bulk catalog downloads
+  // Dynamic downloader for bulk catalog downloads
   const downloadAllCatalogs = async () => {
     if (isDownloading) return;
     setIsDownloading(true);
 
     try {
-      // Chunk-split imports to preserve zero-latency loading
-      const belgium = (await import('../../data/Belgium.json')).default;
-      const netherlands = (await import('../../data/Netherlands.json')).default;
-      const romania = (await import('../../data/Romania.json')).default;
-      const spain = (await import('../../data/Spain.json')).default;
-      // const symphonya = (await import('../../data/symphonya.json')).default;
-      const california = (await import('../../data/California.json')).default;
-      const newJersey = (await import('../../data/New_Jersey.json')).default;
-      const newYork = (await import('../../data/New_York.json')).default;
-
-      const datasets = [
-        { name: 'Belgium_Distribution_Hub.csv', data: belgium },
-        { name: 'Netherlands_Select_Stock.csv', data: netherlands },
-        { name: 'Romania_Logistics_Hub.csv', data: romania },
-        { name: 'Spain_Southern_Hub.csv', data: spain },
-        // { name: 'Symphonya_Inventory_Stock.csv', data: symphonya },
-        { name: 'California_Distribution_Hub.csv', data: california },
-        { name: 'New_Jersey_Logistics_Hub.csv', data: newJersey },
-        { name: 'New_York_Select_Stock.csv', data: newYork },
+      const staticFiles = [
+        { name: 'Belgium Inventory List.xlsx', url: '/api/download-file?filename=Belgium%20Inventory%20List.xlsx' },
+        { name: 'Netherland Inventory List.xlsx', url: '/api/download-file?filename=Netherland%20Inventory%20List.xlsx' },
+        { name: 'Romania Inventory LIst.xlsx', url: '/api/download-file?filename=Romania%20Inventory%20LIst.xlsx' },
+        { name: 'Spain Inventory List.xlsx', url: '/api/download-file?filename=Spain%20Inventory%20List.xlsx' },
+        { name: 'USA Inventory List California.xlsx', url: '/api/download-file?filename=USA%20Inventory%20List%20California.xlsx' },
+        { name: 'USA Inventory List (New Jersy).xlsx', url: '/api/download-file?filename=USA%20Inventory%20List%20(New%20Jersy).xlsx' },
+        { name: 'USA Inventory (New York).xls', url: '/api/download-file?filename=USA%20Inventory%20(New%20York).xls' }
       ];
 
-      datasets.forEach((dataset, idx) => {
-        // Delay execution linearly to inhibit browser pop-up intervention
+      // Download static files with linear delay
+      staticFiles.forEach((file, idx) => {
         setTimeout(() => {
-          const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
-          const csvRows = [
-            headers.join(','),
-            ...dataset.data.map((row: any) =>
-              [
-                `"${String(row.EAN).replace(/"/g, '""')}"`,
-                `"${row.BRAND.replace(/"/g, '""')}"`,
-                `"${row.STATUS.replace(/"/g, '""')}"`,
-                `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
-                row['READY QTYS'],
-                row['PRICE EUR'],
-                row['PRICE USD'],
-                typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
-              ].join(',')
-            )
-          ];
-
-          const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
-          const encodedUri = encodeURI(csvContent);
           const link = document.createElement('a');
-          link.setAttribute('href', encodedUri);
-          link.setAttribute('download', dataset.name);
+          link.setAttribute('href', file.url);
+          link.setAttribute('download', file.name);
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-
-          // Final record hook
-          if (idx === datasets.length - 1) {
-            setIsDownloading(false);
-          }
         }, idx * 450);
       });
+
+      // Download dynamic wholesale stock list
+      setTimeout(async () => {
+        try {
+          const response = await fetch('/api/stock');
+          if (response.ok) {
+            const data = await response.json();
+            const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
+            const csvRows = [
+              headers.join(','),
+              ...data.map((row: any) =>
+                [
+                  `"${String(row.EAN).replace(/"/g, '""')}"`,
+                  `"${row.BRAND.replace(/"/g, '""')}"`,
+                  `"${row.STATUS.replace(/"/g, '""')}"`,
+                  `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
+                  row['READY QTYS'],
+                  row['PRICE EUR'],
+                  row['PRICE USD'],
+                  typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
+                ].join(',')
+              )
+            ];
+
+            const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement('a');
+            link.setAttribute('href', encodedUri);
+            link.setAttribute('download', 'wholesale_stock_list.csv');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }
+        } catch (error) {
+          console.error('Failed to download wholesale stock list', error);
+        } finally {
+          setIsDownloading(false);
+        }
+      }, staticFiles.length * 450);
+
     } catch (error) {
-      console.error('Execution stack failure on dynamic JSON deserialization', error);
+      console.error('Execution stack failure on catalog downloads', error);
       setIsDownloading(false);
     }
   };

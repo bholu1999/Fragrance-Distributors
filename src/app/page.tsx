@@ -244,32 +244,32 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                brand: 'Creed',
-                name: 'Aventus Eau de Parfum',
+                brand: 'COCO',
+                name: 'COCO NOIR Chanel Paris',
                 image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600&auto=format&fit=crop',
                 size: '100ml',
                 qty: '',
                 price: ''
               },
               {
-                brand: 'Tom Ford',
-                name: 'Oud Wood Eau de Parfum',
+                brand: 'SUN',
+                name: 'SUN di Gioia GIORGIO ARMANI',
                 image: 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=600&auto=format&fit=crop',
                 size: '50ml',
                 qty: '',
                 price: ''
               },
               {
-                brand: 'Byredo',
-                name: 'Bal d\'Afrique Eau de Parfum',
+                brand: 'COCO',
+                name: 'COCO MADEMOISELLE Chanel Paris',
                 image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=600&auto=format&fit=crop',
                 size: '100ml',
                 qty: '',
                 price: ''
               },
               {
-                brand: 'MFK',
-                name: 'Baccarat Rouge 540',
+                brand: 'BLEU',
+                name: 'BLEU de Chanel Eau de Parfum',
                 image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=600&auto=format&fit=crop',
                 size: '70ml',
                 qty: '',

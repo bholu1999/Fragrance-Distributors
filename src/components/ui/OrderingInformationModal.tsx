@@ -79,7 +79,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
 
               {/* Two-Column Side-by-Side Layout */}
               <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
-                
+
                 {/* --- ENGLISH SECTION --- */}
                 <div className="p-6 md:p-8 space-y-8">
                   <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
@@ -97,7 +97,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                         Orders can be placed by downloading our pricelist in excel format and putting your desired qty next to the items and emailing the file back to us.
                       </p>
                       <p>
-                        Please include, your billing and shipping address and telephone numbers when ordering for the first time. 
+                        Please include, your billing and shipping address and telephone numbers when ordering for the first time.
                       </p>
                       <p className="bg-amber-50 text-amber-800 p-3 rounded-md text-xs border border-amber-200 font-medium">
                         Pricing is negotiable for buyers interested in quantities of 24pcs or more per item.
@@ -119,7 +119,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                       <div className="bg-slate-100 p-3 rounded-md border border-slate-200 grid grid-cols-2 gap-4 text-xs mb-3">
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Minimum Order</span>
-                          <span className="text-dark font-bold text-base">€1,000 Euros</span>
+                          <span className="text-dark font-bold text-base">€500 Euros</span>
                         </div>
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Processing Time</span>
@@ -127,13 +127,13 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                         </div>
                       </div>
                       <p>
-                        <strong>Payment Terms:</strong> All international shipments are limited to payment in full via bank/wire transfer prior to the release of any shipments. 
+                        <strong>Payment Terms:</strong> All international shipments are limited to payment in full via bank/wire transfer prior to the release of any shipments.
                       </p>
                       <p className="text-xs text-red-600 font-medium">
                         Note: We do not accept Credit Cards or PayPal for international orders.
                       </p>
                       <p>
-                        <strong>Shipping:</strong> We ship to almost every part of the world including all major cities and ports. 
+                        <strong>Shipping:</strong> We ship to almost every part of the world including all major cities and ports.
                       </p>
                       <ul className="list-disc pl-5 space-y-1 text-xs">
                         <li><strong>Orders €10,000+:</strong> Shipped via our trusted freight forwarders or client&apos;s own arrangements.</li>
@@ -153,7 +153,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                       <div className="bg-slate-100 p-3 rounded-md border border-slate-200 grid grid-cols-2 gap-4 text-xs mb-3">
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Minimum Order</span>
-                          <span className="text-dark font-bold text-base">€500 Euros</span>
+                          <span className="text-dark font-bold text-base">€99 Euros</span>
                         </div>
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Processing Time</span>
@@ -226,7 +226,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                       <div className="bg-slate-100 p-3 rounded-md border border-slate-200 grid grid-cols-2 gap-4 text-xs mb-3">
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Pedido Mínimo</span>
-                          <span className="text-dark font-bold text-base">€1.000 Euros</span>
+                          <span className="text-dark font-bold text-base">€500 Euros</span>
                         </div>
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Tiempo de Proceso</span>
@@ -260,7 +260,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                       <div className="bg-slate-100 p-3 rounded-md border border-slate-200 grid grid-cols-2 gap-4 text-xs mb-3">
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Pedido Mínimo</span>
-                          <span className="text-dark font-bold text-base">€500 Euros</span>
+                          <span className="text-dark font-bold text-base">€99 Euros</span>
                         </div>
                         <div>
                           <span className="block text-slate-500 font-semibold uppercase tracking-wider mb-1">Tiempo de Proceso</span>

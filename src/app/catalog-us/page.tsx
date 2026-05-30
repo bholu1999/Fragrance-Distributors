@@ -32,14 +32,14 @@ interface CatalogRecord {
 // Static metadata for US Stock Catalogs (Lazy loaded)
 const sheetsMetadata = [
   {
-    id: 'california',
-    fileName: 'California.json',
+    id: 'california-xlsx',
+    fileName: 'USA Inventory List California.xlsx',
     title: 'USA Inventory (Ex.W California)',
     description: 'Fast-moving wholesale domestic stock ready for West Coast and nationwide distribution.',
     tag: 'USA Inventory Stock',
     colorClass: 'sky',
     rowCount: 873,
-    sizeEstimate: '0.2 MB',
+    sizeEstimate: '68 KB',
     readyQty: 0,
     topBrands: 'LATTAFA, DUMONT, MAISON, AFNAN, ARMAF, AHMED, RASASI, D&G...',
     iconBg: 'bg-sky-500/10',
@@ -47,21 +47,18 @@ const sheetsMetadata = [
     borderColor: 'border-sky-500/20',
     accentGradient: 'from-sky-500/20 to-blue-500/10',
     btnColor: 'bg-sky-600 hover:bg-sky-500 shadow-sky-600/20',
-    preview: [
-      { EAN: '6290171072607', BRAND: 'AFNAN', DESCRIPTION: 'AFNAN - 9PM FEMME 3.4 EDP...' },
-      { EAN: '6290171072591', BRAND: 'AFNAN', DESCRIPTION: 'AFNAN - 9AM FEMME 3.4 EDP...' },
-      { EAN: '6290171002215', BRAND: 'AFNAN', DESCRIPTION: 'AFNAN - HER HIGHNESS V BL...' }
-    ]
+    downloadOnly: true,
+    preview: []
   },
   {
-    id: 'new_jersey',
-    fileName: 'New_Jersey.json',
+    id: 'new_jersey-xlsx',
+    fileName: 'USA Inventory List (New Jersy).xlsx',
     title: 'USA Inventory (Ex.W FOB New Jersey)',
     description: 'Extensive regional stock feed serving the Tri-State area with premium designer fragrances.',
     tag: 'USA Inventory Stock',
     colorClass: 'violet',
     rowCount: 1229,
-    sizeEstimate: '0.3 MB',
+    sizeEstimate: '114 KB',
     readyQty: 234101,
     topBrands: 'LATTAFA, VERSACE, RASASI, Z.ALTERNATIVE DESIGNER, DISNEY, CUBA...',
     iconBg: 'bg-violet-500/10',
@@ -69,21 +66,18 @@ const sheetsMetadata = [
     borderColor: 'border-violet-500/20',
     accentGradient: 'from-violet-500/20 to-purple-500/10',
     btnColor: 'bg-violet-600 hover:bg-violet-500 shadow-violet-600/20',
-    preview: [
-      { EAN: '4011700740055', BRAND: '4711', DESCRIPTION: '4711 10.1 OZ EDC SPLASH' },
-      { EAN: '4011700740048', BRAND: '4711', DESCRIPTION: '4711 13.5 OZ EDC SPLASH' },
-      { EAN: '4011700740031', BRAND: '4711', DESCRIPTION: '4711 27.1 OZ EDC SPLASH' }
-    ]
+    downloadOnly: true,
+    preview: []
   },
   {
-    id: 'new_york',
-    fileName: 'New_York.json',
+    id: 'new_york-xls',
+    fileName: 'USA Inventory (New York).xls',
     title: 'USA Inventory (FOB New York)',
     description: 'High-velocity select stock portfolio covering prestige brands and major wholesale lines.',
     tag: 'USA Inventory Stock',
     colorClass: 'rose',
     rowCount: 4468,
-    sizeEstimate: '1.1 MB',
+    sizeEstimate: '1.0 MB',
     readyQty: 239231,
     topBrands: 'LATTAFA, AL, ARMAF, TST, KHADLAJ, ARD, SALERM, MONTALE...',
     iconBg: 'bg-rose-500/10',
@@ -91,11 +85,8 @@ const sheetsMetadata = [
     borderColor: 'border-rose-500/20',
     accentGradient: 'from-rose-500/20 to-pink-500/10',
     btnColor: 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20',
-    preview: [
-      { EAN: '837015000493', BRAND: '273', DESCRIPTION: '273 L 2.5 EDP SPR' },
-      { EAN: '4011700748709', BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA BLOOD ...' },
-      { EAN: '4011700750368', BRAND: '4711', DESCRIPTION: '4711 ACQUA COLONIA INTENS...' }
-    ]
+    downloadOnly: true,
+    preview: []
   }
 ];
 
@@ -121,21 +112,13 @@ export default function UsCatalog() {
     return sheetsMetadata.find((s) => s.id === activeSheetId) || sheetsMetadata[0];
   }, [activeSheetId]);
 
-  // Dynamically import JSON chunks
+  // Load catalog sheet data (US sheets are downloadOnly, so this is unused)
   const loadSheetData = async (id: string) => {
     if (loadedData[id]) return loadedData[id];
 
     setIsLoadingData(true);
     try {
-      let data;
-      if (id === 'california') {
-        data = (await import('../../data/California.json')).default;
-      } else if (id === 'new_jersey') {
-        data = (await import('../../data/New_Jersey.json')).default;
-      } else if (id === 'new_york') {
-        data = (await import('../../data/New_York.json')).default;
-      }
-
+      let data = [];
       const typedData = data as CatalogRecord[];
       setLoadedData(prev => ({ ...prev, [id]: typedData }));
       return typedData;
@@ -322,35 +305,43 @@ export default function UsCatalog() {
                     {sheet.description}
                   </p>
 
-                  <div className="relative mb-6 rounded-lg border border-slate-200 bg-slate-50/50 p-2 overflow-hidden select-none">
-                    <div className="flex text-[9px] font-mono text-slate-400 border-b border-slate-200 pb-1.5 mb-1.5">
-                      <div className="w-1/12 text-center border-r border-slate-200">#</div>
-                      <div className="w-3/12 px-1 border-r border-slate-200">A (EAN)</div>
-                      <div className="w-3/12 px-1 border-r border-slate-200">B (BRAND)</div>
-                      <div className="w-5/12 px-1">C (DESCRIPTION)</div>
+                  {/* Excel Spreadsheet Skeleton Section */}
+                  {!(sheet as any).downloadOnly ? (
+                    <div className="relative mb-6 rounded-lg border border-slate-200 bg-slate-50/50 p-2 overflow-hidden select-none">
+                      <div className="flex text-[9px] font-mono text-slate-400 border-b border-slate-200 pb-1.5 mb-1.5">
+                        <div className="w-1/12 text-center border-r border-slate-200">#</div>
+                        <div className="w-3/12 px-1 border-r border-slate-200">A (EAN)</div>
+                        <div className="w-3/12 px-1 border-r border-slate-200">B (BRAND)</div>
+                        <div className="w-5/12 px-1">C (DESCRIPTION)</div>
+                      </div>
+                      <div className="space-y-1.5">
+                        {sheet.preview.map((row, rowIdx) => (
+                          <div key={rowIdx} className="flex items-center text-[9px] font-mono text-slate-500">
+                            <div className="w-1/12 text-center border-r border-slate-100 text-[8px] text-slate-400 font-bold pr-1">{rowIdx + 1}</div>
+                            <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
+                              <span className="font-bold text-[8px] text-black max-w-full truncate font-mono">
+                                {row.EAN}
+                              </span>
+                            </div>
+                            <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
+                              <span className="font-bold text-[8px] text-black max-w-full truncate">
+                                {row.BRAND}
+                              </span>
+                            </div>
+                            <div className="w-5/12 px-1 truncate text-[8px] text-black font-bold">
+                              {row.DESCRIPTION}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none opacity-80" />
                     </div>
-                    <div className="space-y-1.5">
-                      {sheet.preview.map((row, rowIdx) => (
-                        <div key={rowIdx} className="flex items-center text-[9px] font-mono text-slate-500">
-                          <div className="w-1/12 text-center border-r border-slate-100 text-[8px] text-slate-400 font-bold pr-1">{rowIdx + 1}</div>
-                          <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <span className="font-bold text-[8px] text-black max-w-full truncate font-mono">
-                              {row.EAN}
-                            </span>
-                          </div>
-                          <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <span className="font-bold text-[8px] text-black max-w-full truncate">
-                              {row.BRAND}
-                            </span>
-                          </div>
-                          <div className="w-5/12 px-1 truncate text-[8px] text-black font-bold">
-                            {row.DESCRIPTION}
-                          </div>
-                        </div>
-                      ))}
+                  ) : (
+                    <div className="relative mb-6 rounded-lg border border-slate-200 bg-sky-50/20 p-6 overflow-hidden flex flex-col items-center justify-center text-center gap-2 h-[126px]">
+                      <FileSpreadsheet className="text-sky-600 animate-pulse" size={40} />
+                      <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Excel Spreadsheet File</span>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none opacity-80" />
-                  </div>
+                  )}
 
                   <div className="grid grid-cols-3 gap-2 border-t border-slate-100 pt-4 mb-6 text-center text-[10px]">
                     <div>
@@ -369,14 +360,25 @@ export default function UsCatalog() {
                     </div>
                   </div>
 
-                  <button
-                    id={`btn-open-sheet-${sheet.id}`}
-                    onClick={() => openSpreadsheet(sheet.id)}
-                    className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
-                  >
-                    <Maximize2 size={13} />
-                    Open Spreadsheet
-                  </button>
+                  {(sheet as any).downloadOnly ? (
+                    <a
+                      id={`btn-open-sheet-${sheet.id}`}
+                      href={`/api/download-file?filename=${encodeURIComponent(sheet.fileName)}`}
+                      className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
+                    >
+                      <Download size={13} />
+                      Download Catalog
+                    </a>
+                  ) : (
+                    <button
+                      id={`btn-open-sheet-${sheet.id}`}
+                      onClick={() => openSpreadsheet(sheet.id)}
+                      className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
+                    >
+                      <Maximize2 size={13} />
+                      Open Spreadsheet
+                    </button>
+                  )}
                 </div>
               </motion.div>
             );
@@ -461,7 +463,7 @@ export default function UsCatalog() {
 
               {/* Tabs */}
               <div className="bg-slate-100 px-6 border-b border-slate-200 flex items-center gap-2 overflow-x-auto">
-                {sheetsMetadata.map((sheet) => (
+                {sheetsMetadata.filter(sheet => !(sheet as any).downloadOnly).map((sheet) => (
                   <button
                     id={`tab-sheet-${sheet.id}`}
                     key={sheet.id}

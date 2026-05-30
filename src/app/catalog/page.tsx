@@ -54,14 +54,14 @@ const sheetsMetadata = [
     ]
   },
   {
-    id: 'belgium',
-    fileName: 'Belgium.json',
+    id: 'belgium-xlsx',
+    fileName: 'Belgium Inventory List.xlsx',
     title: 'Belgium Inventory Stock',
     description: 'Flagship European catalog assortment with over 55,000 distinct SKU records ready for continental distribution.',
     tag: 'Belgium Inventory Stock',
     colorClass: 'emerald',
     rowCount: 56619,
-    sizeEstimate: '13.7 MB',
+    sizeEstimate: '3.3 MB',
     readyQty: 3164622,
     topBrands: 'Lattafa, Wella, EUROSTIL, Chanel, Guerlain, Al, La...',
     iconBg: 'bg-emerald-500/10',
@@ -69,21 +69,18 @@ const sheetsMetadata = [
     borderColor: 'border-emerald-500/20',
     accentGradient: 'from-emerald-500/20 to-teal-500/10',
     btnColor: 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/20',
-    preview: [
-      { EAN: '8411047136133', BRAND: 'Aire', DESCRIPTION: 'Aire De Sevilla Divina Ea...' },
-      { EAN: '8411047136218', BRAND: 'Aire', DESCRIPTION: 'Aire De Sevilla Peonia Ea...' },
-      { EAN: '3145891475609', BRAND: 'Chanel', DESCRIPTION: 'Chanel Sublimage La Creme...' }
-    ]
+    downloadOnly: true,
+    preview: []
   },
   {
-    id: 'netherlands',
-    fileName: 'Netherlands.json',
+    id: 'netherlands-xlsx',
+    fileName: 'Netherland Inventory List.xlsx',
     title: 'Netherlands Inventory Stock',
     description: 'High-velocity select stock portfolio covering premium designers and curated hair cosmetics.',
     tag: 'Netherlands Inventory Stock',
     colorClass: 'indigo',
     rowCount: 7267,
-    sizeEstimate: '1.8 MB',
+    sizeEstimate: '483 KB',
     readyQty: 827180,
     topBrands: 'Louis Cardin, Creed, Revlon, The Olphactory, Floris, Lattafa...',
     iconBg: 'bg-indigo-500/10',
@@ -91,21 +88,18 @@ const sheetsMetadata = [
     borderColor: 'border-indigo-500/20',
     accentGradient: 'from-indigo-500/20 to-blue-500/10',
     btnColor: 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/20',
-    preview: [
-      { EAN: '3760263370537', BRAND: '100 Bon', DESCRIPTION: '100 Bon Carvi & Jardin De...' },
-      { EAN: '3760263370551', BRAND: '100 Bon', DESCRIPTION: '100 Bon Nagaranga & Santa...' },
-      { EAN: '3760263370513', BRAND: '100 Bon', DESCRIPTION: '100 Bon Bergamote & Rose ...' }
-    ]
+    downloadOnly: true,
+    preview: []
   },
   {
-    id: 'romania',
-    fileName: 'Romania.json',
+    id: 'romania-xlsx',
+    fileName: 'Romania Inventory LIst.xlsx',
     title: 'Romania Inventory Stock',
     description: 'Extensive regional stock feed serving Eastern Europe with prime designer houses and cosmetics.',
     tag: 'Romania Inventory Stock',
     colorClass: 'amber',
     rowCount: 27139,
-    sizeEstimate: '7.3 MB',
+    sizeEstimate: '2.5 MB',
     readyQty: 714421,
     topBrands: 'Milk Shake, Shiseido, Christian Dior, Diego Dalla Palma, Payot...',
     iconBg: 'bg-amber-500/10',
@@ -113,21 +107,18 @@ const sheetsMetadata = [
     borderColor: 'border-amber-500/20',
     accentGradient: 'from-amber-500/20 to-yellow-500/10',
     btnColor: 'bg-amber-600 hover:bg-amber-500 shadow-amber-600/20',
-    preview: [
-      { EAN: '4011700747771', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' },
-      { EAN: '4011700747689', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia W...' },
-      { EAN: '4011700747856', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' }
-    ]
+    downloadOnly: true,
+    preview: []
   },
   {
-    id: 'spain',
-    fileName: 'Spain.json',
+    id: 'spain-xlsx',
+    fileName: 'Spain Inventory List.xlsx',
     title: 'Spain Inventory Stock',
     description: 'Comprehensive Mediterranean regional logistics stock with top-tier premium fragrance lines.',
     tag: 'Spain Inventory Stock',
     colorClass: 'rose',
     rowCount: 27209,
-    sizeEstimate: '7.3 MB',
+    sizeEstimate: '2.1 MB',
     readyQty: 716493,
     topBrands: 'Milk Shake, Shiseido, Christian Dior, Diego Dalla Palma, Payot...',
     iconBg: 'bg-rose-500/10',
@@ -135,11 +126,8 @@ const sheetsMetadata = [
     borderColor: 'border-rose-500/20',
     accentGradient: 'from-rose-500/20 to-pink-500/10',
     btnColor: 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20',
-    preview: [
-      { EAN: '4011700747771', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' },
-      { EAN: '4011700747689', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia W...' },
-      { EAN: '4011700747856', BRAND: '4711', DESCRIPTION: 'Set 4711: Acqua Colonia L...' }
-    ]
+    downloadOnly: true,
+    preview: []
   }
 ];
 
@@ -165,28 +153,17 @@ export default function Catalog() {
     return sheetsMetadata.find((s) => s.id === activeSheetId) || sheetsMetadata[0];
   }, [activeSheetId]);
 
-  // Dynamically import JSON chunks on-demand to keep bundle sizes highly optimized
+  // Load catalog sheet data (only for real-time Symphonya wholesale list)
   const loadSheetData = async (id: string, forceFresh = false) => {
     if (loadedData[id] && !forceFresh) return loadedData[id];
 
     setIsLoadingData(true);
     try {
-      let data;
+      let data = [];
       if (id === 'symphonya') {
         const response = await fetch('/api/stock');
         if (!response.ok) throw new Error('API fetch failed');
         data = await response.json();
-      } else {
-        // Using Webpack Dynamic Imports to stream data chunks only when requested
-        if (id === 'belgium') {
-          data = (await import('../../data/Belgium.json')).default;
-        } else if (id === 'netherlands') {
-          data = (await import('../../data/Netherlands.json')).default;
-        } else if (id === 'romania') {
-          data = (await import('../../data/Romania.json')).default;
-        } else if (id === 'spain') {
-          data = (await import('../../data/Spain.json')).default;
-        }
       }
 
       const typedData = data as CatalogRecord[];
@@ -386,36 +363,43 @@ export default function Catalog() {
                   </p>
 
                   {/* Excel Spreadsheet Skeleton Section */}
-                  <div className="relative mb-6 rounded-lg border border-slate-200 bg-slate-50/50 p-2 overflow-hidden select-none">
-                    <div className="flex text-[9px] font-mono text-slate-400 border-b border-slate-200 pb-1.5 mb-1.5">
-                      <div className="w-1/12 text-center border-r border-slate-200">#</div>
-                      <div className="w-3/12 px-1 border-r border-slate-200">A (EAN)</div>
-                      <div className="w-3/12 px-1 border-r border-slate-200">B (BRAND)</div>
-                      <div className="w-5/12 px-1">C (DESCRIPTION)</div>
+                  {!(sheet as any).downloadOnly ? (
+                    <div className="relative mb-6 rounded-lg border border-slate-200 bg-slate-50/50 p-2 overflow-hidden select-none">
+                      <div className="flex text-[9px] font-mono text-slate-400 border-b border-slate-200 pb-1.5 mb-1.5">
+                        <div className="w-1/12 text-center border-r border-slate-200">#</div>
+                        <div className="w-3/12 px-1 border-r border-slate-200">A (EAN)</div>
+                        <div className="w-3/12 px-1 border-r border-slate-200">B (BRAND)</div>
+                        <div className="w-5/12 px-1">C (DESCRIPTION)</div>
+                      </div>
+                      <div className="space-y-1.5">
+                        {sheet.preview.map((row, rowIdx) => (
+                          <div key={rowIdx} className="flex items-center text-[9px] font-mono text-slate-500">
+                            <div className="w-1/12 text-center border-r border-slate-100 text-[8px] text-slate-400 font-bold pr-1">{rowIdx + 1}</div>
+                            <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
+                              <span className="font-bold text-[8px] text-black max-w-full truncate font-mono">
+                                {row.EAN}
+                              </span>
+                            </div>
+                            <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
+                              <span className="font-bold text-[8px] text-black max-w-full truncate">
+                                {row.BRAND}
+                              </span>
+                            </div>
+                            <div className="w-5/12 px-1 truncate text-[8px] text-black font-bold">
+                              {row.DESCRIPTION}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {/* Excel Style gridlines layer */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none opacity-80" />
                     </div>
-                    <div className="space-y-1.5">
-                      {sheet.preview.map((row, rowIdx) => (
-                        <div key={rowIdx} className="flex items-center text-[9px] font-mono text-slate-500">
-                          <div className="w-1/12 text-center border-r border-slate-100 text-[8px] text-slate-400 font-bold pr-1">{rowIdx + 1}</div>
-                          <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <span className="font-bold text-[8px] text-black max-w-full truncate font-mono">
-                              {row.EAN}
-                            </span>
-                          </div>
-                          <div className="w-3/12 px-1 flex items-center border-r border-slate-100">
-                            <span className="font-bold text-[8px] text-black max-w-full truncate">
-                              {row.BRAND}
-                            </span>
-                          </div>
-                          <div className="w-5/12 px-1 truncate text-[8px] text-black font-bold">
-                            {row.DESCRIPTION}
-                          </div>
-                        </div>
-                      ))}
+                  ) : (
+                    <div className="relative mb-6 rounded-lg border border-slate-200 bg-emerald-50/20 p-6 overflow-hidden flex flex-col items-center justify-center text-center gap-2 h-[126px]">
+                      <FileSpreadsheet className="text-emerald-600 animate-pulse" size={40} />
+                      <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Excel Spreadsheet File</span>
                     </div>
-                    {/* Excel Style gridlines layer */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none opacity-80" />
-                  </div>
+                  )}
 
                   {/* Card Metadata Footer */}
                   <div className="grid grid-cols-3 gap-2 border-t border-slate-100 pt-4 mb-6 text-center text-[10px]">
@@ -436,14 +420,25 @@ export default function Catalog() {
                   </div>
 
                   {/* Interactive Button */}
-                  <button
-                    id={`btn-open-sheet-${sheet.id}`}
-                    onClick={() => openSpreadsheet(sheet.id)}
-                    className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
-                  >
-                    <Maximize2 size={13} />
-                    Open Spreadsheet
-                  </button>
+                  {(sheet as any).downloadOnly ? (
+                    <a
+                      id={`btn-open-sheet-${sheet.id}`}
+                      href={`/api/download-file?filename=${encodeURIComponent(sheet.fileName)}`}
+                      className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
+                    >
+                      <Download size={13} />
+                      Download Catalog
+                    </a>
+                  ) : (
+                    <button
+                      id={`btn-open-sheet-${sheet.id}`}
+                      onClick={() => openSpreadsheet(sheet.id)}
+                      className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
+                    >
+                      <Maximize2 size={13} />
+                      Open Spreadsheet
+                    </button>
+                  )}
                 </div>
               </motion.div>
             );
@@ -532,7 +527,7 @@ export default function Catalog() {
 
               {/* Excel Tabs - Allows switching sheets directly inside modal */}
               <div className="bg-slate-100 px-6 border-b border-slate-200 flex items-center gap-2 overflow-x-auto">
-                {sheetsMetadata.map((sheet) => (
+                {sheetsMetadata.filter(sheet => !(sheet as any).downloadOnly).map((sheet) => (
                   <button
                     id={`tab-sheet-${sheet.id}`}
                     key={sheet.id}
