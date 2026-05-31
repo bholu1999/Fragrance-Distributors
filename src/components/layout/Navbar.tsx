@@ -68,31 +68,28 @@ export default function Navbar() {
           const response = await fetch('/api/stock');
           if (response.ok) {
             const data = await response.json();
-            const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
-            const csvRows = [
-              headers.join(','),
-              ...data.map((row: any) =>
-                [
-                  `"${String(row.EAN).replace(/"/g, '""')}"`,
-                  `"${row.BRAND.replace(/"/g, '""')}"`,
-                  `"${row.STATUS.replace(/"/g, '""')}"`,
-                  `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
-                  row['READY QTYS'],
-                  row['PRICE EUR'],
-                  row['PRICE USD'],
-                  typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
-                ].join(',')
-              )
+            const XLSX = await import('xlsx');
+            
+            // Generate worksheet from JSON data
+            const ws = XLSX.utils.json_to_sheet(data);
+            
+            // Set custom column widths to make columns wider and easier to read
+            ws['!cols'] = [
+              { wch: 18 }, // EAN
+              { wch: 25 }, // BRAND
+              { wch: 15 }, // STATUS
+              { wch: 55 }, // DESCRIPTION
+              { wch: 15 }, // READY QTYS
+              { wch: 15 }, // PRICE EUR
+              { wch: 15 }, // PRICE USD
+              { wch: 15 }  // PRICE GBP
             ];
-
-            const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement('a');
-            link.setAttribute('href', encodedUri);
-            link.setAttribute('download', 'wholesale_stock_list.csv');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Wholesale Stock List');
+            
+            // Write out the file and trigger download
+            XLSX.writeFile(wb, 'wholesale_stock_list.xlsx');
           }
         } catch (error) {
           console.error('Failed to download wholesale stock list', error);

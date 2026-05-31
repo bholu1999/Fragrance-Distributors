@@ -276,36 +276,38 @@ export default function Catalog() {
     setSelectedCell({ row: rowIdx + 1, colName, value: String(value) });
   };
 
-  // Real CSV File Export Trigger
-  const exportToCSV = () => {
+  // Real XLSX File Export Trigger
+  const exportToXLSX = async () => {
     const data = loadedData[activeSheet.id] || [];
     if (data.length === 0) return;
 
-    const headers = ['EAN', 'BRAND', 'STATUS', 'DESCRIPTION', 'READY QTYS', 'PRICE EUR', 'PRICE USD', 'PRICE GBP'];
-    const csvRows = [
-      headers.join(','), // Header row
-      ...data.map((row) =>
-        [
-          `"${String(row.EAN).replace(/"/g, '""')}"`,
-          `"${row.BRAND.replace(/"/g, '""')}"`,
-          `"${row.STATUS.replace(/"/g, '""')}"`,
-          `"${row.DESCRIPTION.replace(/"/g, '""')}"`,
-          row['READY QTYS'],
-          row['PRICE EUR'],
-          row['PRICE USD'],
-          typeof row['PRICE GBP'] === 'string' ? `"${row['PRICE GBP'].replace(/"/g, '""')}"` : row['PRICE GBP']
-        ].join(',')
-      )
-    ];
-
-    const csvContent = 'data:text/csv;charset=utf-8,' + csvRows.join('\n');
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', activeSheet.fileName.replace('.json', '.csv'));
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      const XLSX = await import('xlsx');
+      
+      // Generate worksheet from JSON data
+      const ws = XLSX.utils.json_to_sheet(data);
+      
+      // Set custom column widths to make columns wider and easier to read
+      ws['!cols'] = [
+        { wch: 18 }, // EAN
+        { wch: 25 }, // BRAND
+        { wch: 15 }, // STATUS
+        { wch: 55 }, // DESCRIPTION
+        { wch: 15 }, // READY QTYS
+        { wch: 15 }, // PRICE EUR
+        { wch: 15 }, // PRICE USD
+        { wch: 15 }  // PRICE GBP
+      ];
+      
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, activeSheet.title);
+      
+      // Write out the file and trigger download
+      const targetFileName = activeSheet.fileName.replace('.json', '.xlsx').replace('.xlsx.xlsx', '.xlsx');
+      XLSX.writeFile(wb, targetFileName);
+    } catch (error) {
+      console.error('Failed to export catalog to XLSX', error);
+    }
   };
 
   return (
@@ -503,15 +505,15 @@ export default function Catalog() {
                     )}
                   </div>
 
-                  {/* CSV Export Button */}
+                  {/* XLSX Export Button */}
                   <button
-                    id="btn-export-csv"
-                    onClick={exportToCSV}
+                    id="btn-export-xlsx"
+                    onClick={exportToXLSX}
                     disabled={isLoadingData || (loadedData[activeSheet.id] || []).length === 0}
                     className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 shadow-md shadow-emerald-600/10 shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Download size={13} />
-                    Export CSV
+                    Export XLSX
                   </button>
 
                   {/* Close Modal */}

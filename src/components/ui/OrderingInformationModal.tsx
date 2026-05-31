@@ -22,6 +22,226 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
     };
   }, [isOpen]);
 
+  const downloadForm = () => {
+    const docHtml = `
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  <title>New Account Application Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #333333;
+      margin: 40px;
+      line-height: 1.5;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 3px double #1e293b;
+      padding-bottom: 12px;
+      margin-bottom: 25px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      font-size: 11px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 2px;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #0f172a;
+      margin-top: 15px;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: #0f172a;
+      background-color: #f1f5f9;
+      padding: 6px 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border-left: 4px solid #0f172a;
+      text-transform: uppercase;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+    td {
+      padding: 10px 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 11px;
+      vertical-align: middle;
+    }
+    .label {
+      font-weight: bold;
+      color: #475569;
+      background-color: #f8fafc;
+      width: 35%;
+    }
+    .value {
+      width: 65%;
+      color: #94a3b8;
+    }
+    .instructions {
+      font-size: 10px;
+      color: #64748b;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 9px;
+      color: #94a3b8;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Fragrance Distributors</div>
+    <div class="subtitle">Premium Wholesale Fragrances & Beauty Supplies</div>
+    <div class="title">Wholesale Account Application Form / Formulario de Cuenta Mayorista</div>
+  </div>
+
+  <p class="instructions">
+    Instructions: Please fill in the details below and email this form back to <strong>fragrancedist@gmail.com</strong> along with a copy of your business registration license / tax certificate.
+  </p>
+
+  <div class="section-title">1. Account Credentials & Contact / Credenciales y Contacto</div>
+  <table>
+    <tr>
+      <td class="label">Email / Correo Electrónico:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Confirm Email / Confirmar Correo:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">First Name / Primer Nombre:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Last Name / Apellido:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Phone / Teléfono:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+  </table>
+
+  <div class="section-title">2. Business Profile / Perfil de Negocio</div>
+  <table>
+    <tr>
+      <td class="label">Company Name / Nombre de Empresa:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Address Line 1 / Dirección Línea 1:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Address Line 2 / Dirección Línea 2:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">City / Ciudad:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Country / País:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Zip or Postal Code / Código Postal:</td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+  </table>
+
+  <div class="section-title">3. Experience & Business Scope / Experiencia e Industria</div>
+  <table>
+    <tr>
+      <td class="label">Years in Fragrance and Beauty Industry:<br><span style="font-size: 8px; font-weight: normal; color: #64748b;">(Años en la industria)</span></td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+    <tr>
+      <td class="label">Briefly Describe Your Business:<br><span style="font-size: 8px; font-weight: normal; color: #64748b;">(Breve descripción de su empresa)</span></td>
+      <td class="value" style="height: 60px;">
+        <br><br><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">Type of Business:<br><span style="font-size: 8px; font-weight: normal; color: #64748b;">(Tipo de negocio)</span></td>
+      <td class="value" style="color: #333333;">
+        [ ] Retail - Independent (Minorista Independiente)<br>
+        [ ] Online/E-commerce (Comercio Electrónico)<br>
+        [ ] Wholesale Distributor (Distribuidor Mayorista)<br>
+        [ ] Department Store / Chain (Cadena de Tiendas)<br>
+        [ ] Other (Otro): ____________________________
+      </td>
+    </tr>
+  </table>
+
+  <div class="section-title">4. Order Information / Información del Pedido</div>
+  <table>
+    <tr>
+      <td class="label">Average Order Qty Per Item:<br><span style="font-size: 8px; font-weight: normal; color: #64748b;">(Cantidad media de pedido por artículo)</span></td>
+      <td class="value" style="color: #333333;">
+        [ ] 1 to 6 Units Per Item (1 a 6 unidades por artículo)<br>
+        [ ] 7 to 24 Units Per Item (7 a 24 unidades por artículo)<br>
+        [ ] 24+ Units Per Item (24+ unidades por artículo)
+      </td>
+    </tr>
+    <tr>
+      <td class="label">Average Order Size (USD):<br><span style="font-size: 8px; font-weight: normal; color: #64748b;">(Tamaño promedio del pedido en USD)</span></td>
+      <td class="value">____________________________________________________________</td>
+    </tr>
+  </table>
+
+  <div class="footer">
+    Fragrance Distributors EU &bull; Web: www.fragrance-distributor.com &bull; Support: fragrancedist@gmail.com
+  </div>
+
+</body>
+</html>
+`;
+
+    const blob = new Blob(['\\ufeff' + docHtml], {
+      type: 'application/msword;charset=utf-8'
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'new_account_application.doc';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -179,7 +399,10 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                           <p className="text-xs text-slate-500">Register with Fragrance Distributors EU</p>
                         </div>
                       </div>
-                      <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-widest uppercase rounded transition-all shadow-sm">
+                      <button 
+                        onClick={downloadForm}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-widest uppercase rounded transition-all shadow-sm"
+                      >
                         <Download size={14} />
                         Download Form
                       </button>
@@ -286,7 +509,10 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                           <p className="text-xs text-slate-500">Regístrese en Fragrance Distributors EU</p>
                         </div>
                       </div>
-                      <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-widest uppercase rounded transition-all shadow-sm">
+                      <button 
+                        onClick={downloadForm}
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-widest uppercase rounded transition-all shadow-sm"
+                      >
                         <Download size={14} />
                         Descargar Formulario
                       </button>
