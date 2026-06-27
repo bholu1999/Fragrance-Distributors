@@ -10,7 +10,7 @@ export default function Contact() {
         <div className="text-center mb-20">
           <span className="text-primary text-[10px] uppercase tracking-[0.3em] font-bold mb-4 block">Get in Touch</span>
           <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-dark mb-6 ">Partnership Enquiries</h1>
-          <p className="text-slate-600 font-light max-w-2xl mx-auto text-sm leading-relaxed">
+          <p className="text-slate-600  max-w-2xl mx-auto text-sm leading-relaxed">
             We are always looking to expand our network of distinguished retailers. Connect with our dedicated account management team.
           </p>
         </div>
@@ -28,27 +28,27 @@ export default function Contact() {
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">First Name</label>
-                  <input type="text" id="firstName" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary font-light text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Jane" />
+                  <input type="text" id="firstName" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Jane" />
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Last Name</label>
-                  <input type="text" id="lastName" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary font-light text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Doe" />
+                  <input type="text" id="lastName" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Doe" />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Company / Retailer Name</label>
-                <input type="text" id="company" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary font-light text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Maison des Parfums" />
+                <input type="text" id="company" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Maison des Parfums" />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Business Email</label>
-                <input type="email" id="email" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary font-light text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="jane@company.com" />
+                <input type="email" id="email" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="jane@company.com" />
               </div>
 
               <div>
                 <label htmlFor="enquiryType" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Enquiry Type</label>
-                <select id="enquiryType" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary font-light text-sm text-dark appearance-none rounded-none transition-colors">
+                <select id="enquiryType" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark appearance-none rounded-none transition-colors">
                   <option>Wholesale Application</option>
                   <option>Brand Representation</option>
                   <option>Press & Media</option>
@@ -58,7 +58,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Message</label>
-                <textarea id="message" rows={4} className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary font-light text-sm text-dark resize-none placeholder-zinc-600 transition-colors" placeholder="Tell us about your retail channels..."></textarea>
+                <textarea id="message" rows={4} className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark resize-none placeholder-zinc-600 transition-colors" placeholder="Tell us about your retail channels..."></textarea>
               </div>
 
               <button type="submit" className="w-full border border-primary bg-primary text-black px-8 py-3.5 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-transparent hover:text-primary transition-colors mt-6">
@@ -77,7 +77,7 @@ export default function Contact() {
             <div>
               <h2 className="font-sans font-bold tracking-tight text-3xl mb-10 text-dark  pt-12 md:pt-0">Global Headquarters</h2>
 
-              <div className="space-y-8 font-light text-slate-600 text-sm">
+              <div className="space-y-8  text-slate-600 text-sm">
                 <div className="flex items-start gap-4">
                   <MapPin className="text-primary shrink-0 mt-1" size={20} />
                   <div>

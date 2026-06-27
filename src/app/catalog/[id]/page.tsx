@@ -23,7 +23,7 @@ export default function CatalogDetail() {
   return (
     <div className="bg-white pt-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
-        
+
         <div className="mb-8">
           <Link href="/catalog" className="text-slate-500 hover:text-primary text-[10px] font-bold uppercase tracking-widest transition-colors flex items-center gap-2">
             &larr; Back to Catalog
@@ -31,18 +31,18 @@ export default function CatalogDetail() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          
+
           {/* Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="aspect-[4/5] bg-white border border-slate-200 p-8 md:p-16 flex items-center justify-center relative overflow-hidden"
           >
-            <img 
-              src={product.image} 
-              alt={product.name} 
-              className="w-full h-full object-cover shadow-2xl" 
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover shadow-2xl"
             />
             {/* Decorative corners */}
             <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-slate-200"></div>
@@ -52,7 +52,7 @@ export default function CatalogDetail() {
           </motion.div>
 
           {/* Details */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -68,7 +68,7 @@ export default function CatalogDetail() {
               SKU: {product.sku}
             </p>
 
-            <p className="font-light text-slate-600 leading-relaxed text-sm mb-12">
+            <p className=" text-slate-600 leading-relaxed text-sm mb-12">
               {product.description}
             </p>
 
@@ -86,15 +86,15 @@ export default function CatalogDetail() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/download" 
+              <Link
+                href="/download"
                 className="flex-1 flex items-center justify-center gap-2 border border-primary bg-primary text-black px-10 py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-transparent hover:text-primary transition-colors shadow-lg shadow-primary/20"
               >
                 <FileSpreadsheet size={16} />
                 Download Excel Spec
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="flex-1 text-center border border-slate-200 bg-white text-dark px-10 py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-slate-50 transition-colors"
               >
                 Request Quote

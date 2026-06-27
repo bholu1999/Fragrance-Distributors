@@ -16,8 +16,8 @@ export default function PaymentInfo() {
 
   const bankDetails = {
     bankName: 'N26 Bank SE, Spanish Branch',
-    swift: '',
-    iban: '',
+    swift: 'NTSBESM1XXX',
+    iban: 'ES78 1563 2626 3532 6778 6384',
     address: 'Calle de Don Ramon de la Cruz, 84, 28006 Madrid, Spain',
   };
 
@@ -47,7 +47,7 @@ export default function PaymentInfo() {
             <h2 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-dark">
               Official Wholesale Payment Directory
             </h2>
-            <p className="text-slate-500 text-xs font-light mt-1 max-w-xl">
+            <p className="text-slate-500 text-xs  mt-1 max-w-xl">
               Execute wire transfers directly to our primary European depository. Select any card credential to copy instantly.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function PaymentInfo() {
               <h3 className="text-base font-bold text-dark mb-2 leading-tight group-hover:text-secondary transition-colors">
                 {bankDetails.bankName}
               </h3>
-              <p className="text-slate-500 text-xs font-light">
+              <p className="text-slate-500 text-xs">
                 Spanish Branch Operations & International Swifts.
               </p>
             </div>
@@ -127,7 +127,7 @@ export default function PaymentInfo() {
               <h3 className="text-base font-bold text-dark mb-2 leading-tight group-hover:text-secondary transition-colors">
                 Primary SEPA Wire Account
               </h3>
-              <p className="text-slate-500 text-xs font-light">
+              <p className="text-slate-500 text-xs ">
                 Direct bank transfers are secure and processed within 24 hours.
               </p>
             </div>
@@ -171,7 +171,7 @@ export default function PaymentInfo() {
               <h3 className="text-base font-bold text-dark mb-2 leading-tight group-hover:text-secondary transition-colors">
                 N26 Madrid HQ Branch
               </h3>
-              <p className="text-slate-500 text-xs font-light truncate">
+              <p className="text-slate-500 text-xs  truncate">
                 {bankDetails.address}
               </p>
             </div>
@@ -204,7 +204,7 @@ export default function PaymentInfo() {
           </div>
           <div>
             <h4 className="text-xs font-bold text-dark uppercase tracking-widest mb-1">Important Logistics Advisory</h4>
-            <p className="text-slate-600 text-xs font-light leading-relaxed">
+            <p className="text-slate-600 text-xs  leading-relaxed">
               Our bank account must be fully credited with the matching settlement amount before shipping orders. Please ensure wire receipts specify your registered distribution corporate account name for prompt verification and zero-latency clearance.
             </p>
           </div>

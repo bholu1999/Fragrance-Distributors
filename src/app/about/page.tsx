@@ -123,7 +123,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-slate-600 leading-relaxed text-lg md:text-xl font-light max-w-3xl mx-auto"
+          className="text-slate-600 leading-relaxed text-lg md:text-xl  max-w-3xl mx-auto"
         >
           Fragrance Distributors EU is a dedicated digital distribution platform that connects suppliers and retailers, bringing innovation and transparency to cross-border e-commerce.
         </motion.p>
@@ -144,7 +144,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter text-white mb-8 leading-tight">
               Empowering SMBs with <br />Global Reach.
             </h2>
-            <p className="text-slate-400 text-lg font-light leading-relaxed mb-12">
+            <p className="text-slate-400 text-lg  leading-relaxed mb-12">
               We support small and medium-sized businesses with original products, competitive pricing, and efficient logistics helping them stay ahead in a demanding market.
             </p>
             <div className="grid grid-cols-2 gap-12 border-t border-white/10 pt-12">

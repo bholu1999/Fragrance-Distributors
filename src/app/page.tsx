@@ -111,7 +111,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="text-slate-500 text-base md:text-lg mb-10 font-light leading-relaxed text-left"
+                className="text-slate-500 text-base md:text-lg mb-10  leading-relaxed text-left"
               >
                 Providing the world's most discerning retailers with immediate access to authentic niche, designer, and artisan fragrances at wholesale volume.
               </motion.p>
@@ -238,7 +238,7 @@ export default function Home() {
           <div className="text-center mb-20">
             <span className="text-secondary text-[10px] uppercase tracking-[0.4em] font-black mb-4 block">Luxury Spotlights</span>
             <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter text-dark">Premium Stock Availability</h2>
-            <p className="text-slate-500 font-light max-w-2xl mx-auto text-sm mt-4">Immediate access to authentic highly sought-after brand portfolios, ready for worldwide B2B distribution.</p>
+            <p className="text-slate-500  max-w-2xl mx-auto text-sm mt-4">Immediate access to authentic highly sought-after brand portfolios, ready for worldwide B2B distribution.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

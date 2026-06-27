@@ -399,7 +399,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                           <p className="text-xs text-slate-500">Register with Fragrance Distributors EU</p>
                         </div>
                       </div>
-                      <button 
+                      <button
                         onClick={downloadForm}
                         className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-widest uppercase rounded transition-all shadow-sm"
                       >
@@ -509,7 +509,7 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                           <p className="text-xs text-slate-500">Regístrese en Fragrance Distributors EU</p>
                         </div>
                       </div>
-                      <button 
+                      <button
                         onClick={downloadForm}
                         className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-widest uppercase rounded transition-all shadow-sm"
                       >
@@ -547,8 +547,8 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                         <Mail size={20} />
                       </div>
                       <h5 className="font-bold text-sm uppercase tracking-widest text-slate-200 mb-2">Email / Correo</h5>
-                      <a href="mailto:fragrancedist@gmail.com" className="text-white hover:text-emerald-400 transition-colors font-semibold text-sm truncate max-w-full">
-                        fragrancedist@gmail.com
+                      <a href="mailto:sales@fragrancedistributors.eu" className="text-white hover:text-emerald-400 transition-colors font-semibold text-sm truncate max-w-full">
+                        sales@fragrancedistributors.eu
                       </a>
                     </div>
 
@@ -557,15 +557,14 @@ export default function OrderingInformationModal({ isOpen, onClose }: OrderingIn
                         <Clock size={20} />
                       </div>
                       <h5 className="font-bold text-sm uppercase tracking-widest text-slate-200 mb-2">Hours / Horario</h5>
-                      <div className="text-slate-300 text-xs space-y-1">
-                        <p><span className="font-semibold">Mon - Fri:</span> 10:00am - 7:00pm</p>
-                        <p><span className="font-semibold">Sat:</span> 10:00am - 5:00pm</p>
+                      <div className="text-white text-sm space-y-1">
+                        <p><span className="font-semibold">Mon - Sat:</span> 9:00am - 7:00pm</p>
                         <p><span className="font-semibold text-red-400">Sun:</span> Closed</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-white/10 text-center text-xs text-slate-400">
+                  <div className="mt-8 pt-6 border-t border-white/10 text-center text-sm text-white">
                     Thank you for your continued support and we look forward to serving you! / ¡Gracias por su continuo apoyo y esperamos poder servirle!
                   </div>
                 </div>

@@ -42,6 +42,7 @@ export default function Navbar() {
     try {
       const staticFiles = [
         { name: 'Belgium Inventory List.xlsx', url: '/api/download-file?filename=Belgium%20Inventory%20List.xlsx' },
+        { name: 'Belgium Inventory List Ex.W_FOB Brussels.xlsx', url: 'https://inventory.perfumedistri.com/6sl1xg463mx4b90p' },
         { name: 'Netherland Inventory List.xlsx', url: '/api/download-file?filename=Netherland%20Inventory%20List.xlsx' },
         { name: 'Romania Inventory LIst.xlsx', url: '/api/download-file?filename=Romania%20Inventory%20LIst.xlsx' },
         { name: 'Spain Inventory List.xlsx', url: '/api/download-file?filename=Spain%20Inventory%20List.xlsx' },

@@ -270,8 +270,11 @@ export default function UsCatalog() {
           <h1 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-dark mb-4">
             Digital Wholesale Portfolios (US)
           </h1>
-          <p className="text-slate-600 font-light max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600  max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Explore dynamic North American wholesale stocks. Select a catalog below to open the spreadsheet emulator, search inventory models, and export to CSV instantly.
+          </p>
+          <p className="text-slate-600  max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Please input order quantity next to item, save file, and e-mail back to us at <a href="mailto:sales@fragrancedistributors.eu" className="text-emerald-600 hover:text-emerald-500 transition-colors font-semibold">sales@fragrancedistributors.eu</a>
           </p>
         </div>
 
@@ -301,7 +304,7 @@ export default function UsCatalog() {
                   <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-sky-600 transition-colors">
                     {sheet.title}
                   </h3>
-                  <p className="text-slate-500 text-xs font-light leading-relaxed mb-6 flex-grow">
+                  <p className="text-slate-500 text-xs  leading-relaxed mb-6 flex-grow">
                     {sheet.description}
                   </p>
 
@@ -412,7 +415,7 @@ export default function UsCatalog() {
                     <h2 className="text-sm md:text-base font-bold flex items-center gap-2">
                       Excel Spreadsheet Emulator <span className="text-[10px] font-mono font-normal text-slate-400 bg-slate-800 px-2.5 py-0.5 rounded-full">{activeSheet.fileName}</span>
                     </h2>
-                    <p className="text-xs text-slate-400 font-light hidden md:block">Interactive live warehouse data grid</p>
+                    <p className="text-xs text-slate-400  hidden md:block">Interactive live warehouse data grid</p>
                   </div>
                 </div>
 
@@ -683,7 +686,7 @@ export default function UsCatalog() {
 
               {!isLoadingData && filteredAndSortedRecords.length > visibleRowsCount && (
                 <div className="bg-white border-t border-slate-200 px-6 py-3 flex justify-between items-center shrink-0">
-                  <span className="text-[10px] text-slate-500 font-sans font-light">
+                  <span className="text-[10px] text-slate-500 font-sans ">
                     Showing <span className="font-semibold text-slate-800">{visibleRowsCount}</span> of{' '}
                     <span className="font-semibold text-slate-800">{filteredAndSortedRecords.length}</span> rows
                   </span>

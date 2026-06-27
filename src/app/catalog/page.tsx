@@ -128,6 +128,26 @@ const sheetsMetadata = [
     btnColor: 'bg-rose-600 hover:bg-rose-500 shadow-rose-600/20',
     downloadOnly: true,
     preview: []
+  },
+  {
+    id: 'belgium-exw-fob-xlsx',
+    fileName: 'Belgium Inventory List Ex.W_FOB Brussels.xlsx',
+    downloadUrl: 'https://inventory.perfumedistri.com/6sl1xg463mx4b90p',
+    title: 'Belgium Inventory List Ex.W/FOB Brussels',
+    description: 'Flagship Belgium wholesale logistics list with direct access to Ex.W/FOB Brussels stock inventory feed.',
+    tag: 'Belgium Ex.W/FOB',
+    colorClass: 'cyan',
+    rowCount: 32410,
+    sizeEstimate: '2.1 MB',
+    readyQty: 1654030,
+    topBrands: 'Premium Designer Houses, Ex.W Brussels Stock',
+    iconBg: 'bg-cyan-500/10',
+    iconColor: 'text-cyan-500',
+    borderColor: 'border-cyan-500/20',
+    accentGradient: 'from-cyan-500/20 to-blue-500/10',
+    btnColor: 'bg-cyan-600 hover:bg-cyan-500 shadow-cyan-600/20',
+    downloadOnly: true,
+    preview: []
   }
 ];
 
@@ -283,10 +303,10 @@ export default function Catalog() {
 
     try {
       const XLSX = await import('xlsx');
-      
+
       // Generate worksheet from JSON data
       const ws = XLSX.utils.json_to_sheet(data);
-      
+
       // Set custom column widths to make columns wider and easier to read
       ws['!cols'] = [
         { wch: 18 }, // EAN
@@ -298,10 +318,10 @@ export default function Catalog() {
         { wch: 15 }, // PRICE USD
         { wch: 15 }  // PRICE GBP
       ];
-      
+
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, activeSheet.title);
-      
+
       // Write out the file and trigger download
       const targetFileName = activeSheet.fileName.replace('.json', '.xlsx').replace('.xlsx.xlsx', '.xlsx');
       XLSX.writeFile(wb, targetFileName);
@@ -327,8 +347,11 @@ export default function Catalog() {
           <h1 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-dark mb-4">
             Digital Wholesale Portfolios (EU)
           </h1>
-          <p className="text-slate-600 font-light max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600  max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Explore dynamic wholesale stock feeds in real time. Select a catalog below to open the spreadsheet emulator, search inventory models, and export to CSV instantly.
+          </p>
+          <p className="text-slate-600  max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Please input order quantity next to item, save file, and e-mail back to us at <a href="mailto:sales@fragrancedistributors.eu" className="text-emerald-600 hover:text-emerald-500 transition-colors font-semibold">sales@fragrancedistributors.eu</a>
           </p>
         </div>
 
@@ -360,7 +383,7 @@ export default function Catalog() {
                   <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-emerald-600 transition-colors">
                     {sheet.title}
                   </h3>
-                  <p className="text-slate-500 text-xs font-light leading-relaxed mb-6 flex-grow">
+                  <p className="text-slate-500 text-xs  leading-relaxed mb-6 flex-grow">
                     {sheet.description}
                   </p>
 
@@ -425,7 +448,9 @@ export default function Catalog() {
                   {(sheet as any).downloadOnly ? (
                     <a
                       id={`btn-open-sheet-${sheet.id}`}
-                      href={`/api/download-file?filename=${encodeURIComponent(sheet.fileName)}`}
+                      href={(sheet as any).downloadUrl || `/api/download-file?filename=${encodeURIComponent(sheet.fileName)}`}
+                      target={(sheet as any).downloadUrl ? "_blank" : undefined}
+                      rel={(sheet as any).downloadUrl ? "noopener noreferrer" : undefined}
                       className={`w-full py-3.5 rounded-lg text-white font-sans text-xs uppercase tracking-widest font-bold shadow-md transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 ${sheet.btnColor}`}
                     >
                       <Download size={13} />
@@ -475,7 +500,7 @@ export default function Catalog() {
                     <h2 className="text-sm md:text-base font-bold flex items-center gap-2">
                       Excel Spreadsheet Emulator <span className="text-[10px] font-mono font-normal text-slate-400 bg-slate-800 px-2.5 py-0.5 rounded-full">{activeSheet.fileName}</span>
                     </h2>
-                    <p className="text-xs text-slate-400 font-light hidden md:block">Interactive live warehouse data grid</p>
+                    <p className="text-xs text-slate-400  hidden md:block">Interactive live warehouse data grid</p>
                   </div>
                 </div>
 
@@ -758,7 +783,7 @@ export default function Catalog() {
               {/* Paginated Load More Section */}
               {!isLoadingData && filteredAndSortedRecords.length > visibleRowsCount && (
                 <div className="bg-white border-t border-slate-200 px-6 py-3 flex justify-between items-center shrink-0">
-                  <span className="text-[10px] text-slate-500 font-sans font-light">
+                  <span className="text-[10px] text-slate-500 font-sans ">
                     Showing <span className="font-semibold text-slate-800">{visibleRowsCount}</span> of{' '}
                     <span className="font-semibold text-slate-800">{filteredAndSortedRecords.length}</span> rows
                   </span>
