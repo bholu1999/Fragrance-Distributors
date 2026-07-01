@@ -1,8 +1,72 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Check } from 'lucide-react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    company: '',
+    email: '',
+    enquiryType: 'Wholesale Application',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form except enquiryType
+        setFormData({
+          firstName: '',
+          lastName: '',
+          company: '',
+          email: '',
+          enquiryType: 'Wholesale Application',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage('Failed to connect to the mail server. Please check your network and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="bg-white pt-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -17,54 +81,139 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-          {/* Form */}
+          {/* Form / Success Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="bg-white border border-slate-200 p-8 md:p-12 shadow-sm rounded-sm"
           >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">First Name</label>
-                  <input type="text" id="firstName" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Jane" />
+            {submitStatus === 'success' ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center text-center py-12"
+              >
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <Check className="text-primary" size={32} />
                 </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Last Name</label>
-                  <input type="text" id="lastName" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Doe" />
+                <h3 className="text-2xl font-bold font-sans text-dark mb-4">Enquiry Received</h3>
+                <p className="text-slate-600 text-sm max-w-sm mb-8 leading-relaxed">
+                  Thank you for reaching out. Your partnership enquiry has been successfully sent to our sales team. We will review your details and get back to you shortly.
+                </p>
+                <button
+                  onClick={() => setSubmitStatus('idle')}
+                  className="border border-primary bg-primary text-black px-8 py-3.5 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-transparent hover:text-primary transition-colors"
+                >
+                  Send Another Message
+                </button>
+              </motion.div>
+            ) : (
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-sm">
+                    <p className="text-[10px] text-red-700 font-bold uppercase tracking-wider mb-1">Submission Failed</p>
+                    <p className="text-sm text-red-600">{errorMessage}</p>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="firstName" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors"
+                      placeholder="Jane"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors"
+                      placeholder="Doe"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="company" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Company / Retailer Name</label>
-                <input type="text" id="company" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="Maison des Parfums" />
-              </div>
+                <div>
+                  <label htmlFor="company" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Company / Retailer Name</label>
+                  <input
+                    type="text"
+                    id="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors"
+                    placeholder="Maison des Parfums"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Business Email</label>
-                <input type="email" id="email" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors" placeholder="jane@company.com" />
-              </div>
+                <div>
+                  <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Business Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark placeholder-zinc-600 transition-colors"
+                    placeholder="jane@company.com"
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="enquiryType" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Enquiry Type</label>
-                <select id="enquiryType" className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark appearance-none rounded-none transition-colors">
-                  <option>Wholesale Application</option>
-                  <option>Brand Representation</option>
-                  <option>Press & Media</option>
-                  <option>General Support</option>
-                </select>
-              </div>
+                <div>
+                  <label htmlFor="enquiryType" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Enquiry Type</label>
+                  <select
+                    id="enquiryType"
+                    value={formData.enquiryType}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark appearance-none rounded-none transition-colors"
+                  >
+                    <option>Wholesale Application</option>
+                    <option>Brand Representation</option>
+                    <option>General Support</option>
+                  </select>
+                </div>
 
-              <div>
-                <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Message</label>
-                <textarea id="message" rows={4} className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark resize-none placeholder-zinc-600 transition-colors" placeholder="Tell us about your retail channels..."></textarea>
-              </div>
+                <div>
+                  <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Message</label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white border border-slate-200 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#F71B63] focus:border-primary  text-sm text-dark resize-none placeholder-zinc-600 transition-colors"
+                    placeholder="Tell us about your retail channels..."
+                  ></textarea>
+                </div>
 
-              <button type="submit" className="w-full border border-primary bg-primary text-black px-8 py-3.5 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-transparent hover:text-primary transition-colors mt-6">
-                Send Enquiry
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full border border-primary bg-primary text-black px-8 py-3.5 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-transparent hover:text-primary transition-colors mt-6 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <span className="w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Enquiry'
+                  )}
+                </button>
+              </form>
+            )}
           </motion.div>
 
           {/* Details */}
@@ -139,4 +288,3 @@ export default function Contact() {
     </div>
   );
 }
-
